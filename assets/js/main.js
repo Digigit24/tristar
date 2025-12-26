@@ -1796,3 +1796,47 @@ function initEliteOverview() {
 document.addEventListener('DOMContentLoaded', function() {
     initEliteOverview();
 });
+
+
+
+
+
+
+
+
+// -------------------------------------------------------- ///
+// service page 
+// Simple counter animation for stats (optional enhancement)
+document.addEventListener('DOMContentLoaded', function() {
+    const statNumbers = document.querySelectorAll('.stat-card .number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const number = entry.target;
+                const target = parseInt(number.getAttribute('data-count') || number.textContent);
+                
+                // Simple count-up animation
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        number.textContent = target + (number.textContent.includes('+') ? '+' : 
+                                                    number.textContent.includes('%') ? '%' : 
+                                                    number.textContent.includes('Core') ? ' Core' : '');
+                        clearInterval(timer);
+                    } else {
+                        number.textContent = Math.floor(current) + (number.textContent.includes('+') ? '+' : 
+                                                    number.textContent.includes('%') ? '%' : 
+                                                    number.textContent.includes('Core') ? ' Core' : '');
+                    }
+                }, 30);
+                
+                observer.unobserve(number);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(number => observer.observe(number));
+});
