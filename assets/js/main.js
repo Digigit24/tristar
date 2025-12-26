@@ -1457,3 +1457,342 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+
+
+// -------------------------------------------------------------------------//
+//  about us section
+
+// hero section
+// Enhanced Hero Section Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS animations if you have AOS library
+    // Otherwise, use the following custom animations
+    
+    // Create particle effect
+    function createParticles() {
+        const particlesContainer = document.querySelector('.hero-particles');
+        if (!particlesContainer) return;
+        
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random properties
+            const size = Math.random() * 3 + 1;
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            const duration = Math.random() * 20 + 10;
+            const delay = Math.random() * 5;
+            
+            particle.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                background: rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1});
+                border-radius: 50%;
+                left: ${posX}%;
+                top: ${posY}%;
+                animation: particleFloat ${duration}s ease-in-out infinite;
+                animation-delay: ${delay}s;
+            `;
+            
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Add particle animation to styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes particleFloat {
+                0%, 100% {
+                    transform: translate(0, 0) rotate(0deg);
+                    opacity: 0.5;
+                }
+                25% {
+                    transform: translate(${Math.random() * 50}px, ${Math.random() * 50}px) rotate(90deg);
+                }
+                50% {
+                    transform: translate(${Math.random() * -50}px, ${Math.random() * 50}px) rotate(180deg);
+                    opacity: 0.8;
+                }
+                75% {
+                    transform: translate(${Math.random() * 50}px, ${Math.random() * -50}px) rotate(270deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Animate numbers on scroll
+    function animateNumbers() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const text = element.textContent;
+                    const number = parseFloat(text.replace(/[^0-9.]/g, ''));
+                    const suffix = text.replace(/[0-9.]/g, '');
+                    
+                    if (!isNaN(number) && !element.classList.contains('animated')) {
+                        element.classList.add('animated');
+                        animateCounter(element, number, suffix);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statNumbers.forEach(stat => observer.observe(stat));
+    }
+    
+    function animateCounter(element, target, suffix) {
+        const duration = 2000;
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            
+            // Format number with commas
+            const formatted = Math.floor(current).toLocaleString();
+            element.textContent = formatted + suffix;
+        }, duration / steps);
+    }
+    
+    // Parallax effect on scroll
+    function initParallax() {
+        const heroSection = document.querySelector('.about-hero');
+        const background = document.querySelector('.hero-background');
+        
+        if (!heroSection || !background) return;
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            background.style.transform = `scale(1.1) translateY(${rate}px)`;
+        });
+    }
+    
+    // Interactive badge hover effect
+    function initBadgeInteraction() {
+        const badge = document.querySelector('.premium-established-badge');
+        
+        if (badge) {
+            badge.addEventListener('mouseenter', () => {
+                badge.style.animation = 'badgeFloat 1s ease-in-out infinite';
+            });
+            
+            badge.addEventListener('mouseleave', () => {
+                badge.style.animation = 'badgeFloat 4s ease-in-out infinite';
+            });
+        }
+    }
+    
+    // Initialize everything
+    createParticles();
+    animateNumbers();
+    initParallax();
+    initBadgeInteraction();
+    
+    // Add smooth scroll for the indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            const nextSection = document.querySelector('.about-hero').nextElementSibling;
+            if (nextSection) {
+                window.scrollTo({
+                    top: nextSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
+
+
+
+
+
+// Company Overview: 
+// JavaScript for Ultra-Premium Overview
+function initEliteOverview() {
+    // Animate stats with smooth counting
+    const statValues = document.querySelectorAll('.stat-value');
+    
+    const animateStat = (element) => {
+        const target = parseInt(element.getAttribute('data-target'));
+        const suffix = element.textContent.includes('%') ? '%' : '+';
+        const duration = 2000;
+        const step = target / (duration / 30);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                element.textContent = target + suffix;
+                clearInterval(timer);
+                // Add glow effect
+                element.style.textShadow = '0 0 25px rgba(16, 100, 148, 0.5)';
+            } else {
+                element.textContent = Math.floor(current) + suffix;
+            }
+        }, 30);
+    };
+    
+    // Animate when center column comes into view
+    const excellenceColumn = document.querySelector('.excellence-column');
+    const columnObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    statValues.forEach(animateStat);
+                }, 500);
+                columnObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    if (excellenceColumn) {
+        columnObserver.observe(excellenceColumn);
+    }
+    
+    // Column hover effects
+    const columns = document.querySelectorAll('.elite-column');
+    columns.forEach(column => {
+        column.addEventListener('mouseenter', function() {
+            const ornament = this.querySelector('.column-ornament');
+            if (ornament) {
+                const line = ornament.querySelector('.ornament-line');
+                if (line) {
+                    line.style.background = 'linear-gradient(90deg, var(--primary-blue), transparent)';
+                }
+            }
+            
+            const feature = this.querySelector('.column-feature');
+            if (feature) {
+                feature.style.opacity = '1';
+                feature.style.transform = 'translateX(10px)';
+            }
+        });
+        
+        column.addEventListener('mouseleave', function() {
+            const ornament = this.querySelector('.column-ornament');
+            if (ornament) {
+                const line = ornament.querySelector('.ornament-line');
+                if (line) {
+                    line.style.background = 'linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent)';
+                }
+            }
+            
+            const feature = this.querySelector('.column-feature');
+            if (feature) {
+                feature.style.opacity = '0.8';
+                feature.style.transform = 'translateX(0)';
+            }
+        });
+    });
+    
+    // Excellence highlight hover effect
+    const excellenceHighlight = document.querySelector('.excellence-highlight');
+    if (excellenceHighlight) {
+        excellenceHighlight.addEventListener('mouseenter', function() {
+            const stats = this.querySelectorAll('.stat-value');
+            stats.forEach(stat => {
+                stat.style.transform = 'scale(1.1)';
+                stat.style.transition = 'transform 0.3s ease';
+            });
+        });
+        
+        excellenceHighlight.addEventListener('mouseleave', function() {
+            const stats = this.querySelectorAll('.stat-value');
+            stats.forEach(stat => {
+                stat.style.transform = 'scale(1)';
+            });
+        });
+    }
+    
+    // Quote animation on scroll
+    const quote = document.querySelector('.elite-quote');
+    const quoteObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                
+                const quoteText = entry.target.querySelector('.quote-text');
+                if (quoteText) {
+                    setTimeout(() => {
+                        quoteText.style.opacity = '1';
+                        quoteText.style.transform = 'translateY(0)';
+                    }, 300);
+                }
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    if (quote) {
+        quote.style.opacity = '0';
+        quote.style.transform = 'translateY(30px)';
+        quote.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        quoteObserver.observe(quote);
+        
+        const quoteText = quote.querySelector('.quote-text');
+        if (quoteText) {
+            quoteText.style.opacity = '0';
+            quoteText.style.transform = 'translateY(20px)';
+            quoteText.style.transition = 'opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s';
+        }
+    }
+    
+    // Background beams parallax effect
+    const beams = document.querySelectorAll('.bg-light-beam');
+    window.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth;
+        beams.forEach((beam, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const offset = (x - 0.5) * 50 * speed;
+            beam.style.transform = `translateY(-100%) translateX(${offset}px)`;
+        });
+    });
+    
+    // Signature badge click effect
+    const signatureBadge = document.querySelector('.signature-badge');
+    if (signatureBadge) {
+        signatureBadge.addEventListener('click', function() {
+            const year = this.querySelector('.badge-year');
+            if (year) {
+                year.style.animation = 'badgePulse 0.6s ease';
+                setTimeout(() => {
+                    year.style.animation = '';
+                }, 600);
+            }
+        });
+    }
+    
+    // Add custom animation for badge pulse
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes badgePulse {
+            0% { transform: scale(1); box-shadow: none; }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(16, 100, 148, 0.3); }
+            100% { transform: scale(1); box-shadow: none; }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', function() {
+    initEliteOverview();
+});
