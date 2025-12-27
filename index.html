@@ -25,7 +25,6 @@
                 <!-- Logo with Text Option -->
                 <div class="brand-container">
                     <img src="assets/Tristar-logo.png" alt="Tristar Realtors Logo" class="navbar-logo">
-                    <!-- Optional: Add text alongside logo -->
                 </div>
             </a>
 
@@ -115,9 +114,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Where <span class="highlight">Luxury</span> Meets <span
-                            class="highlight">Location</span></h1>
-                    <p class="hero-subtitle">Discover exceptional properties in the world's most desirable locations</p>
+                    <h1 class="hero-title">TRISTAR <span class="highlight">REALTORS</span></h1>
                 </div>
 
                 <!-- Stats Bar -->
@@ -262,7 +259,7 @@
                             <p class="quote-text">"We build for the bold and craft for visionaries. Every project is a
                                 commitment to quality, innovation, and the communities we serve."</p>
                             <div class="quote-author">
-                                <strong>— The Elite Homes Team</strong>
+                                <strong>— TRISTAR REALTORS Team</strong>
                             </div>
                         </div>
                     </div>
@@ -352,7 +349,7 @@
                         <div class="rating-score">4.9</div>
                     </div>
                     <div class="trust-text">
-                        <p><strong>800+ satisfied families</strong> trust The Elite Living Experience for their dream homes</p>
+                        <p><strong>800+ satisfied families</strong> trust The TRISTAR REALTORS Living Experience for their dream homes</p>
                     </div>
                 </div>
             </div> -->
@@ -703,8 +700,7 @@
         <div class="container">
             <!-- Section Header -->
             <div class="section-header">
-                <span class="section-label">Our Distinction</span> <br>
-                <h2 class="section-title">What makes<span class="highlight">us different</span></h2>
+                <h2 class="section-title">What makes<span class="highlight"> us different</span></h2>
                 <p class="section-subtitle">
                     We don’t just build real estate. We build credibility.
                 </p>
@@ -715,7 +711,7 @@
                 <div class="difference-image">
                     <div class="image-container">
                         <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                            alt="Elite Real Estate Service" class="main-img">
+                            alt="TRISTAR REALTORS Real Estate Service" class="main-img">
                         <div class="image-overlay"></div>
 
                         <!-- Floating Achievement Badge -->
@@ -817,7 +813,7 @@
                         <!-- Image Container -->
                         <div class="leader-image-wrapper">
                             <div class="leader-image-container">
-                                <img src="/assets/person1.jpg" alt="Nitin Mittal" class="leader-portrait">
+                                <img src="/assets/nitin-mittal.jpg" alt="Nitin Mittal" class="leader-portrait">
                                 <div class="image-glow"></div>
                             </div>
                             <div class="leader-image-frame"></div>
@@ -841,8 +837,7 @@
                         <!-- Image Container -->
                         <div class="leader-image-wrapper">
                             <div class="leader-image-container">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                    alt="Swapndeep Goyal" class="leader-portrait">
+                                <img src="/assets/swapndeep-goyal.png" alt="Swapndeep Goyal" class="leader-portrait">
                                 <div class="image-glow"></div>
                             </div>
                             <div class="leader-image-frame"></div>
@@ -871,118 +866,169 @@
     </section>
 
 
-    <!-- Centered Premium Contact Form -->
+    <!-- Premium Contact Section with Bento Grid -->
     <section id="contact" class="section-padding premium-contact-section">
         <div class="container">
             <!-- Section Header -->
             <div class="contact-header text-center mb-5">
-                <span class="section-label">Contact Us</span>
-                <h2 class="section-title">Get Specialist Advice for Residential, Commercial or Property</h2>
-                <p class="section-subtitle">Complete the form below and our real estate experts will contact you within
-                    24
-                    hours</p>
+                <span class="section-label">Quick enquiry</span> <br>
+                <h2 class="section-title">Get specialist advice for residential, commercial or property</h2>
             </div>
 
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xl-6">
+            <div class="row align-items-center">
+                <!-- Left Column: Contact Form -->
+                <div class="col-lg-6 col-xl-5 mb-5 mb-lg-0">
                     <div class="premium-contact-form">
-                        <div class="form-header text-center mb-4">
-                            <div class="form-icon mb-3">
-                                <i class="fas fa-headset"></i>
+
+                        <form id="consultationForm" class="contact-form">
+                            <!-- Name Field -->
+                            <div class="form-group floating-form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <input type="text" class="form-control" id="fullName" placeholder=" " required>
+                                <label for="fullName">Full Name *</label>
+                                <div class="form-underline"></div>
                             </div>
-                            <h3>Personalized Consultation Request</h3>
-                            <p class="form-intro">Let us know how we can assist you with your real estate needs</p>
-                        </div>
 
-                        <form id="consultationForm" class="centered-contact-form">
-                            <div class="form-fields">
-                                <!-- Name Field -->
-                                <div class="form-group floating-form-group">
-                                    <div class="input-icon">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <input type="text" class="form-control" id="fullName" placeholder=" " required>
-                                    <label for="fullName">Full Name *</label>
-                                    <div class="form-underline"></div>
+                            <!-- Email Field -->
+                            <div class="form-group floating-form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
+                                <input type="email" class="form-control" id="emailAddress" placeholder=" " required>
+                                <label for="emailAddress">Email Address *</label>
+                                <div class="form-underline"></div>
+                            </div>
 
-                                <!-- Email Field -->
-                                <div class="form-group floating-form-group">
-                                    <div class="input-icon">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <input type="email" class="form-control" id="emailAddress" placeholder=" " required>
-                                    <label for="emailAddress">Email Address *</label>
-                                    <div class="form-underline"></div>
+                            <!-- Phone Field -->
+                            <div class="form-group floating-form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-phone-alt"></i>
                                 </div>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder=" " required>
+                                <label for="phoneNumber">Phone Number *</label>
+                                <div class="form-underline"></div>
+                            </div>
 
-                                <!-- Phone Field -->
-                                <div class="form-group floating-form-group">
-                                    <div class="input-icon">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <input type="tel" class="form-control" id="phoneNumber" placeholder=" " required>
-                                    <label for="phoneNumber">Phone Number *</label>
-                                    <div class="form-underline"></div>
+                            <!-- Inquiry Type Dropdown -->
+                            <div class="form-group floating-form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-question-circle"></i>
                                 </div>
+                                <select class="form-control" id="inquiryType" required>
+                                    <option value="" selected disabled></option>
+                                    <option value="residential-buying">Buying Residential Property</option>
+                                    <option value="commercial-buying">Buying Commercial Property</option>
+                                    <option value="residential-selling">Selling Residential Property</option>
+                                    <option value="commercial-selling">Selling Commercial Property</option>
+                                    <option value="renting-leasing">Renting / Leasing</option>
+                                    <option value="property-management">Property Management</option>
+                                    <option value="investment-consulting">Investment Consulting</option>
+                                    <option value="general-query">General Inquiry</option>
+                                </select>
+                                <label for="inquiryType">Type of Inquiry *</label>
+                                <div class="form-underline"></div>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </div>
 
-                                <!-- Inquiry Type Dropdown -->
-                                <div class="form-group floating-form-group">
-                                    <div class="input-icon">
-                                        <i class="fas fa-question-circle"></i>
-                                    </div>
-                                    <select class="form-control" id="inquiryType" required>
-                                        <option value="" selected disabled></option>
-                                        <option value="residential-buying">Buying Residential Property</option>
-                                        <option value="commercial-buying">Buying Commercial Property</option>
-                                        <option value="residential-selling">Selling Residential Property</option>
-                                        <option value="commercial-selling">Selling Commercial Property</option>
-                                        <option value="renting-leasing">Renting / Leasing</option>
-                                        <option value="property-management">Property Management</option>
-                                        <option value="investment-consulting">Investment Consulting</option>
-                                        <option value="legal-services">Legal & Documentation Services</option>
-                                        <option value="loan-assistance">Loan & Financial Assistance</option>
-                                        <option value="general-query">General Inquiry</option>
-                                    </select>
-                                    <label for="inquiryType">Type of Inquiry *</label>
-                                    <div class="form-underline"></div>
-                                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                                </div>
-
-                                <!-- Submit Button -->
-                                <div class="form-group text-center mt-5">
-                                    <button type="submit" class="btn btn-submit-consultation">
-                                        <span class="btn-text">
-                                            <i class="fas fa-paper-plane me-2"></i> Submit Request
-                                        </span>
-                                        <span class="btn-loading">
-                                            <i class="fas fa-spinner fa-spin me-2"></i> Processing...
-                                        </span>
-                                    </button>
-                                    <p class="form-note mt-3">
-                                        <i class="fas fa-shield-alt me-1"></i> Your information is secure and
-                                        confidential
-                                    </p>
-                                </div>
+                            <!-- Submit Button -->
+                            <div class="form-group text-center mt-4">
+                                <button type="submit" class="btn btn-submit-consultation">
+                                    <span class="btn-text">
+                                        <i class="fas fa-paper-plane me-2"></i> Submit Request
+                                    </span>
+                                    <span class="btn-loading">
+                                        <i class="fas fa-spinner fa-spin me-2"></i> Processing...
+                                    </span>
+                                </button>
+                                <p class="form-note mt-3">
+                                    <i class="fas fa-shield-alt me-1"></i> Your information is secure and confidential
+                                </p>
                             </div>
                         </form>
+                    </div>
+                </div>
 
-                        <!-- Alternative Contact -->
-                        <div class="alternative-contact text-center mt-5 pt-4 border-top">
-                            <p class="mb-3">Prefer to contact us directly?</p>
-                            <div class="contact-options">
-                                <a href="" class="contact-option">
-                                    <i class="fas fa-phone"></i>
-                                    <span>Call Now</span>
-                                </a>
-                                <a href="mailto:tristarrealtors03@gmail.com" class="contact-option">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Email Us</span>
-                                </a>
-                                <a href="https://wa.me/919657555585" target="_blank" class="contact-option">
-                                    <i class="fab fa-whatsapp"></i>
-                                    <span>WhatsApp</span>
-                                </a>
+                <!-- Right Column: Bento Grid Images -->
+                <div class="col-lg-6 col-xl-7">
+                    <div class="bento-grid-wrapper">
+                        <div class="bento-grid">
+                            <!-- Main Large Image -->
+                            <div class="bento-item bento-large"
+                                style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                <div class="bento-overlay">
+                                    <h4>Luxury Residences</h4>
+                                    <p>Experience premium living spaces</p>
+                                </div>
+                            </div>
+
+                            <!-- Medium Image 1 -->
+                            <div class="bento-item bento-medium"
+                                style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                                <div class="bento-overlay">
+                                    <h4>Modern Amenities</h4>
+                                    <p>World-class facilities</p>
+                                </div>
+                            </div>
+
+                            <!-- Medium Image 2 -->
+                            <div class="bento-item bento-medium"
+                                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                                <div class="bento-overlay">
+                                    <h4>Panoramic Views</h4>
+                                    <p>Breathtaking cityscapes</p>
+                                </div>
+                            </div>
+
+                            <!-- Medium Image 2 -->
+                            <div class="bento-item bento-medium"
+                                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                                <div class="bento-overlay">
+                                    <h4>Panoramic Views</h4>
+                                    <p>Breathtaking cityscapes</p>
+                                </div>
+                            </div>
+
+                            <!-- Small Image 1 -->
+                            <div class="bento-item bento-small"
+                                style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');">
+                                <div class="bento-overlay">
+                                    <h4>Premium Interiors</h4>
+                                </div>
+                            </div>
+
+                            <!-- Small Image 2 -->
+                            <div class="bento-item bento-small"
+                                style="background-image: url('/assets/smart-home.jpg');">
+                                <div class="bento-overlay">
+                                    <h4>Smart Living</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Options -->
+                        <div class="contact-options-bento mt-4">
+                            <div class="contact-option-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h5>Call Now</h5>
+                                    <p>+91 96575 55585</p>
+                                </div>
+                            </div>
+                            <div class="contact-option-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h5>Email Us</h5>
+                                    <p>tristarrealtors03@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-option-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <h5>WhatsApp</h5>
+                                    <p>+91 96575 55585</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -996,7 +1042,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <h3 class="logo-text">Elite<span>Homes</span></h3>
+                    <h3 class="logo-text">TRISTAR REALTORS</h3>
                     <p class="footer-description">Premium real estate services for luxury properties in prime locations
                         worldwide.</p>
                     <div class="social-icons">
@@ -1029,7 +1075,8 @@
                 <div class="col-lg-3 col-md-4 mb-4">
                     <h4>Contact Info</h4>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i>Tristar Realtors, Shop No 50, Ground floor, Vastushree Complex, Hyde park, Marketyard, Pune-411037</li>
+                        <li><i class="fas fa-map-marker-alt"></i>Tristar Realtors, Shop No 50, Ground floor, Vastushree
+                            Complex, Hyde park, Marketyard, Pune-411037</li>
                         <li><i class="fas fa-phone"></i>+91 96575 55585 <br> +91 89830 25261</li>
                         <li><i class="fas fa-envelope"></i>tristarrealtors03@gmail.com</li>
                     </ul>

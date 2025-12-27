@@ -100,7 +100,7 @@
 
        .nav-link {
            color: var(--secondary-blue);
-           font-weight: 500;
+           font-weight: 700;
            font-size: 1rem;
            padding: 10px 18px !important;
            margin: 0 5px;
@@ -120,7 +120,7 @@
 
        .nav-link.active {
            color: var(--primary-blue);
-           font-weight: 600;
+           font-weight: 600 ;
        }
 
        .nav-link::before {
