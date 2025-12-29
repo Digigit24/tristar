@@ -103,394 +103,160 @@ a {
 
 
 /* ====================== */
-/*  navbar */
-/* ViewportDock – Fixed-size floating navigation dock (Premium) */
 :root {
-    --vpdock-h: 78px;
-    --vpdock-radius: 18px;
-    --vpdock-gap: 14px;
+  --primary-blue: #0e5ea8;
+  --secondary-blue: #093a66;
+  --dock-height: 80px;
 }
 
-/* Wrapper fixed position */
+/* Dock wrapper */
 .vpdock {
-    position: fixed;
-    top: 14px;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    pointer-events: none;
+  position: fixed;
+  top: 14px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 .vpdock .container {
-    pointer-events: none;
+  max-width: 1400px;
 }
 
-/* Shell */
+/* Main shell */
 .vpdock-shell {
-    pointer-events: auto;
-    height: var(--vpdock-h);
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--vpdock-gap);
+  height: var(--dock-height);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 18px;
 
-    padding: 10px 14px;
-    border-radius: var(--vpdock-radius);
-
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    border: 1px solid rgba(16, 100, 148, 0.12);
-    box-shadow: 0 18px 50px rgba(11, 55, 105, 0.18);
-
-    transition: box-shadow .25s ease, background .25s ease, border-color .25s ease;
-    will-change: background, box-shadow;
-}
-
-/* On scroll: only material changes */
-.vpdock.is-scrolled .vpdock-shell {
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 22px 60px rgba(11, 55, 105, 0.22);
-    border-color: rgba(16, 100, 148, 0.18);
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(14,94,168,.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,.15);
 }
 
 /* Brand */
-.vpdock-brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    height: 100%;
-    padding: 0;
-    flex: 0 0 auto;
+.vpdock-brand img {
+  width: 78px;
+  height: 56px;
+  object-fit: contain;
 }
 
-.vpdock-logo {
-    width: 76px;
-    height: 56px;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 12px;
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.vpdock-brand:hover .vpdock-logo {
-    transform: scale(1.02);
-    box-shadow: 0 14px 26px rgba(11, 55, 105, 0.18);
-}
-
-/* Links (Desktop + Tablet) */
+/* Center links */
 .vpdock-links {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 
-    height: calc(var(--vpdock-h) - 22px);
-    padding: 6px;
-    border-radius: 16px;
-
-    flex: 1 1 auto;
-    min-width: 0;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
 }
 
 .vpdock-links::-webkit-scrollbar {
-    display: none;
-}
-
-/* Fade edges on desktop/tablet so overflow looks premium */
-.vpdock-links::before,
-.vpdock-links::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 28px;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.vpdock-links::before {
-    left: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, 0));
-}
-
-.vpdock-links::after {
-    right: 0;
-    background: linear-gradient(270deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, 0));
+  display: none;
 }
 
 .vpdock-link {
-    position: relative;
-    text-decoration: none;
-    color: var(--secondary-blue);
-    font-weight: 700;
-    font-size: .95rem;
-    padding: 10px 12px;
-    border-radius: 14px;
-    flex: 0 0 auto;
-
-    transition: background .18s ease, color .18s ease, transform .18s ease;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  color: var(--secondary-blue);
+  transition: all .25s ease;
 }
 
 .vpdock-link:hover {
-    background: rgba(16, 100, 148, 0.08);
-    color: var(--primary-blue);
-    transform: translateY(-2px);
+  background: rgba(14,94,168,.08);
+  color: var(--primary-blue);
 }
 
 .vpdock-link.is-active {
-    color: var(--primary-blue);
-    background: rgba(16, 100, 148, 0.10);
+  background: rgba(14,94,168,.12);
+  color: var(--primary-blue);
 }
 
-.vpdock-link.is-active::after {
-    content: "";
-    position: absolute;
-    left: 14px;
-    right: 14px;
-    bottom: 6px;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
-    opacity: .9;
-}
-
-/* Actions */
+/* Right actions */
 .vpdock-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 100px;
 }
 
 .vpdock-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+  height: 54px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-    height: 56px;
-    padding: 0 14px;
-    white-space: nowrap;
-
-    color: #fff;
-    font-weight: 800;
-    border-radius: 14px;
-
-    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-    box-shadow: 0 14px 30px rgba(16, 100, 148, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.vpdock-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 42px rgba(16, 100, 148, 0.32);
+  background: linear-gradient(135deg,var(--primary-blue),var(--secondary-blue));
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(14,94,168,.35);
 }
 
 .vpdock-burger {
-    width: 46px;
-    height: 46px;
-    border: none;
-    border-radius: 14px;
-    background: rgba(16, 100, 148, 0.10);
-    color: var(--primary-blue);
+  display: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(14,94,168,.1);
+  color: var(--primary-blue);
+}
 
+/* Mobile menu */
+.vpdock-mobile {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(14px);
+}
+
+.vpdock-mobile a {
+  display: block;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: var(--secondary-blue);
+  text-decoration: none;
+}
+
+.vpdock-mobile a:hover {
+  background: rgba(14,94,168,.1);
+}
+
+.mobile-cta {
+  margin-top: 12px;
+  text-align: center;
+  background: linear-gradient(135deg,var(--primary-blue),var(--secondary-blue));
+  color: #fff !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .vpdock-links,
+  .vpdock-cta {
+    display: none;
+  }
+
+  .vpdock-burger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
 
-    transition: background .2s ease, transform .2s ease;
-}
-
-.vpdock-burger:hover {
-    transform: scale(1.03);
-    background: rgba(16, 100, 148, 0.14);
-}
-
-/* Mobile dropdown */
-.vpdock-mobile {
-    pointer-events: auto;
-    margin-top: 10px;
-    padding: 12px;
-    border-radius: 18px;
-
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    border: 1px solid rgba(16, 100, 148, 0.12);
-    box-shadow: 0 22px 60px rgba(11, 55, 105, 0.18);
-}
-
-.vpdock-mitem {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    padding: 12px 12px;
-    border-radius: 14px;
-
-    color: var(--secondary-blue);
-    text-decoration: none;
-    font-weight: 700;
-
-    transition: background .18s ease, transform .18s ease, color .18s ease;
-}
-
-.vpdock-mitem:hover {
-    background: rgba(16, 100, 148, 0.08);
-    transform: translateX(6px);
-    color: var(--primary-blue);
-}
-
-.vpdock-mitem.is-active {
-    background: rgba(16, 100, 148, 0.10);
-    color: var(--primary-blue);
-}
-
-.vpdock-mcta {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    padding: 12px;
-    border-radius: 14px;
-    text-decoration: none;
-
-    font-weight: 900;
-    color: #fff;
-
-    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-    box-shadow: 0 14px 30px rgba(16, 100, 148, 0.22);
-}
-
-/* Bottom dock (mobile) */
-.vpdock-bottom {
-    pointer-events: auto;
-    position: fixed;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    z-index: 10000;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-
-    padding: 10px;
-    border-radius: 18px;
-
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    border: 1px solid rgba(16, 100, 148, 0.12);
-    box-shadow: 0 22px 60px rgba(11, 55, 105, 0.22);
-}
-
-.vpdock-bitem {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-
-    text-decoration: none;
-    color: var(--secondary-blue);
-    font-weight: 800;
-    font-size: .72rem;
-
-    padding: 10px 6px;
-    border-radius: 14px;
-
-    transition: background .18s ease, transform .18s ease, color .18s ease;
-}
-
-.vpdock-bitem i {
-    font-size: 1rem;
-    opacity: .85;
-}
-
-.vpdock-bitem:hover {
-    background: rgba(16, 100, 148, 0.08);
-    transform: translateY(-2px);
-    color: var(--primary-blue);
-}
-
-.vpdock-bitem.is-active {
-    background: rgba(16, 100, 148, 0.10);
-    color: var(--primary-blue);
-}
-
-/* spacing so fixed dock doesn't overlap content */
-body {
-    padding-top: calc(var(--vpdock-h) + 34px);
-}
-
-@media (max-width: 991px) {
-    body {
-        padding-top: calc(var(--vpdock-h) + 34px);
-        padding-bottom: 92px;
-    }
-}
-
-/* Tablet tuning (992px–1199px): tighter to fit nicer */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .vpdock-shell {
-        padding: 10px 10px;
-        gap: 8px;
-    }
-
-    .vpdock-logo {
-        width: 70px;
-        height: 54px;
-    }
-
-    .vpdock-link {
-        padding: 10px 10px;
-        font-size: .92rem;
-    }
-
-    .vpdock-cta {
-        padding: 0 12px;
-    }
-}
-
-/* Large desktop (>=1200px): comfortable spacing */
-@media (min-width: 1200px) {
-    .vpdock-shell {
-        padding: 0px 10px;
-    }
-}
-
-/* Accessibility: reduce motion */
-@media (prefers-reduced-motion: reduce) {
-
-    .vpdock-shell,
-    .vpdock-link,
-    .vpdock-cta,
-    .vpdock-burger,
-    .vpdock-brand,
-    .vpdock-bitem,
-    .vpdock-mitem,
-    .vpdock-logo {
-        transition: none;
-    }
+  body {
+    padding-top: calc(var(--dock-height) + 30px);
+  }
 }
 
 
@@ -501,7 +267,7 @@ body {
     min-height: 100vh;
 
     /* IMPORTANT: hero starts from screen top and goes behind navbar */
-    margin-top: -112px;
+    margin-top: -0px;
     padding-top: 0;
 
     overflow: hidden;
@@ -4752,7 +4518,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    margin-top: -112px;
+    margin-top: -0px;
     color: white;
     isolation: isolate;
 }

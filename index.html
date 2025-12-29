@@ -18,71 +18,61 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <nav class="vpdock" aria-label="Primary" id="vpdock">
+    <!-- ViewportDock Navbar -->
+    <nav class="vpdock" id="vpdock" aria-label="Primary Navigation">
         <div class="container">
             <div class="vpdock-shell">
-
+    
                 <!-- Brand -->
                 <a class="vpdock-brand" href="/index.html" aria-label="Tristar Realtors Home">
-                    <img src="assets/Tristar-logo.png" alt="Tristar Realtors Logo" class="vpdock-logo" />
+                    <img src="assets/Tristar-logo.png" alt="Tristar Realtors Logo" />
                 </a>
-
-                <!-- Links (Desktop + Tablet) -->
-                <div class="vpdock-links d-none d-lg-flex" role="navigation">
+    
+                <!-- Center Links -->
+                <div class="vpdock-links" role="navigation">
                     <a class="vpdock-link is-active" href="/index.html">Home</a>
                     <a class="vpdock-link" href="/about-us.html">About Us</a>
-                    <a class="vpdock-link" href="/service.html">Commercial</a>
-                    <a class="vpdock-link" href="/project.html">Residential</a>
-                    <a class="vpdock-link" href="/contact.html">Pre-Leased</a>
-                    <a class="vpdock-link" href="/contact.html">Leasing</a>
-                    <a class="vpdock-link" href="/contact.html">Services</a>
-                    <a class="vpdock-link" href="/contact.html">Awards & Recognition</a>
-                    <a class="vpdock-link" href="/contact.html">Contact Us</a>
+                    <a class="vpdock-link" href="/commercial.html">Commercial</a>
+                    <a class="vpdock-link" href="/residential.html">Residential</a>
+                    <a class="vpdock-link" href="/pre-leased-property.html">Pre-Leased</a>
+                    <a class="vpdock-link" href="/leasing.html">Leasing</a>
+                    <a class="vpdock-link" href="/services.html">Services</a>
+                    <a class="vpdock-link" href="/awards.html">Awards</a>
+                    <a class="vpdock-link" href="/contact.html">Contact</a>
                 </div>
-
-                <!-- Right actions -->
+    
+                <!-- Right Action -->
                 <div class="vpdock-actions">
-                    <a class="vpdock-cta d-none d-lg-inline-flex" href="tel:+919657555585">
+                    <a class="vpdock-cta" href="tel:+919657555585">
                         <i class="fas fa-phone-alt"></i>
                         <span>Get In Touch</span>
                     </a>
-
-                    <!-- Mobile toggle -->
-                    <button class="vpdock-burger d-lg-none" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#vpdockMobileMenu" aria-controls="vpdockMobileMenu" aria-expanded="false"
-                        aria-label="Open menu">
+    
+                    <!-- Mobile Toggle -->
+                    <button class="vpdock-burger" data-bs-toggle="collapse" data-bs-target="#vpdockMobileMenu"
+                        aria-label="Menu">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
+    
             </div>
-
-            <!-- Mobile dropdown -->
-            <div class="collapse vpdock-mobile d-lg-none" id="vpdockMobileMenu">
-                <a class="vpdock-mitem is-active" href="/index.html"><i class="fas fa-home"></i> Home</a>
-                <a class="vpdock-mitem" href="/about-us.html"><i class="fas fa-building"></i> About</a>
-                <a class="vpdock-mitem" href="/service.html"><i class="fas fa-concierge-bell"></i> Commercial</a>
-                <a class="vpdock-mitem" href="/project.html"><i class="fas fa-eye"></i> Residential</a>
-                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Pre-Leased</a>
-                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Leasing</a>
-                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Services</a>
-                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Awards & Recognition</a>
-                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
-
-                <a class="vpdock-mcta" href="tel:+919657555585">
-                    <i class="fas fa-phone-alt"></i> Call: +91 96575 55585
+    
+            <!-- Mobile Menu -->
+            <div class="collapse vpdock-mobile" id="vpdockMobileMenu">
+                <a href="/index.html">Home</a>
+                <a href="/about-us.html">About Us</a>
+                <a href="/service.html">Commercial</a>
+                <a href="/project.html">Residential</a>
+                <a href="/pre-leased.html">Pre-Leased</a>
+                <a href="/leasing.html">Leasing</a>
+                <a href="/services.html">Services</a>
+                <a href="/awards.html">Awards</a>
+                <a href="/contact.html">Contact</a>
+    
+                <a class="mobile-cta" href="tel:+919657555585">
+                    <i class="fas fa-phone-alt"></i> Call Now
                 </a>
             </div>
-        </div>
-
-        <!-- Bottom dock (Mobile thumb-friendly) -->
-        <div class="vpdock-bottom d-lg-none" aria-label="Quick navigation">
-            <a class="vpdock-bitem is-active" href="/index.html"><i class="fas fa-home"></i><span>Home</span></a>
-            <a class="vpdock-bitem" href="/about-us.html"><i class="fas fa-building"></i><span>About</span></a>
-            <a class="vpdock-bitem" href="/service.html"><i
-                    class="fas fa-concierge-bell"></i><span>Commercial</span></a>
-            <a class="vpdock-bitem" href="/project.html"><i class="fas fa-eye"></i><span>Residential</span></a>
-            <a class="vpdock-bitem" href="/contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
         </div>
     </nav>
 
@@ -265,14 +255,14 @@
     <!-- property section -->
     <section id="properties" class="section-padding pmc4-properties">
         <div class="container">
-    
+
             <div class="section-header pmc4-head">
                 <h2 class="section-title">PROPERTIES</h2>
                 <p class="section-subtitle">Four categories. One look. Quick decisions.</p>
             </div>
-    
+
             <div class="pmc4-grid">
-    
+
                 <!-- Card 1 -->
                 <a class="pmc4-card" href="/project.html" aria-label="Residential properties">
                     <div class="pmc4-media">
@@ -280,13 +270,13 @@
                         </div>
                         <div class="pmc4-overlay"></div>
                     </div>
-    
+
                     <div class="pmc4-namebar">
                         <h3 class="pmc4-title">Flats</h3>
                         <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-    
+
                 <!-- Card 2 -->
                 <a class="pmc4-card" href="/service.html" aria-label="Commercial properties">
                     <div class="pmc4-media">
@@ -294,13 +284,13 @@
                         </div>
                         <div class="pmc4-overlay"></div>
                     </div>
-    
+
                     <div class="pmc4-namebar">
                         <h3 class="pmc4-title">Shops</h3>
                         <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-    
+
                 <!-- Card 3 -->
                 <a class="pmc4-card" href="/contact.html" aria-label="Pre-leased properties">
                     <div class="pmc4-media">
@@ -309,13 +299,13 @@
                         </div>
                         <div class="pmc4-overlay"></div>
                     </div>
-    
+
                     <div class="pmc4-namebar">
                         <h3 class="pmc4-title">Office</h3>
                         <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-    
+
                 <!-- Card 4 -->
                 <a class="pmc4-card" href="/contact.html" aria-label="Leasing properties">
                     <div class="pmc4-media">
@@ -324,13 +314,13 @@
                         </div>
                         <div class="pmc4-overlay"></div>
                     </div>
-    
+
                     <div class="pmc4-namebar">
                         <h3 class="pmc4-title">Bunglows</h3>
                         <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-    
+
                 <!-- card 5 -->
                 <a class="pmc4-card" href="/contact.html" aria-label="Leasing properties">
                     <div class="pmc4-media">
@@ -339,13 +329,13 @@
                         </div>
                         <div class="pmc4-overlay"></div>
                     </div>
-    
+
                     <div class="pmc4-namebar">
                         <h3 class="pmc4-title">Showrooms</h3>
                         <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-    
+
                 <!-- card 6 -->
                 <a class="pmc4-card" href="/contact.html" aria-label="Leasing properties">
                     <div class="pmc4-media">
@@ -354,79 +344,78 @@
                         </div>
                         <div class="pmc4-overlay"></div>
                     </div>
-    
+
                     <div class="pmc4-namebar">
                         <h3 class="pmc4-title">Industrial Wearhouse</h3>
                         <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-    
+
             </div>
         </div>
-    
+
         <!-- soft background accents -->
         <div class="pmc4-blob pmc4-blob-1"></div>
         <div class="pmc4-blob pmc4-blob-2"></div>
     </section>
-    
 
     <section class="wcn-section" id="why-consultant">
         <div class="wcn-bg" aria-hidden="true"></div>
         <div class="wcn-overlay" aria-hidden="true"></div>
-    
+
         <div class="container wcn-wrap">
-    
+
             <!-- Title block -->
             <div class="wcn-titlebox">
                 <span class="wcn-line wcn-line-top" aria-hidden="true"></span>
-    
+
                 <h2 class="wcn-title">WHY DO YOU NEED A CONSULTANT?</h2>
-    
+
                 <span class="wcn-line wcn-line-bot" aria-hidden="true"></span>
             </div>
-    
+
             <!-- Icon grid -->
             <div class="wcn-grid">
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="wcn-text">Location</div>
                 </div>
-    
+
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-eye"></i></div>
                     <div class="wcn-text">Vision</div>
                 </div>
-    
+
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-house-user"></i></div>
                     <div class="wcn-text">Home Work</div>
                 </div>
-    
+
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-gavel"></i></div>
                     <div class="wcn-text">Litigation</div>
                 </div>
-    
+
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-chart-line"></i></div>
                     <div class="wcn-text">ROI</div>
                 </div>
-    
+
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-compass"></i></div>
                     <div class="wcn-text">Vastu Compliance</div>
                 </div>
-    
+
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-rupee-sign"></i></div>
                     <div class="wcn-text">Current Market Price</div>
                 </div>
-    
+
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-seedling"></i></div>
                     <div class="wcn-text">Growth Prospectus</div>
                 </div>
-    
+
                 <div class="wcn-item">
                     <div class="wcn-ico"><i class="fas fa-file-signature"></i></div>
                     <div class="wcn-text">
@@ -434,17 +423,17 @@
                         <small>Commencement &amp; Completion</small>
                     </div>
                 </div>
-    
+
                 <div class="wcn-item wcn-wide">
                     <div class="wcn-ico"><i class="fas fa-shield-alt"></i></div>
                     <div class="wcn-text">Reputation And His Current Financial Status</div>
                 </div>
-    
+
                 <div class="wcn-item wcn-wide">
                     <div class="wcn-ico"><i class="fas fa-handshake"></i></div>
                     <div class="wcn-text">Most Important Developer Or Saler Plays With Your Emotions</div>
                 </div>
-    
+
                 <div class="wcn-item wcn-wide">
                     <div class="wcn-ico"><i class="fas fa-road"></i></div>
                     <div class="wcn-text">Approach Road / Any Encroachment</div>
@@ -453,20 +442,19 @@
         </div>
     </section>
 
-
     <!-- services -->
     <section id="services" class="section-padding pms6-services">
         <div class="container">
-    
+
             <div class="section-header pms6-head">
                 <h2 class="section-title">OUR SERVICES</h2>
                 <p class="section-subtitle">
                     Professional real estate services crafted for buyers, sellers, and investors.
                 </p>
             </div>
-    
+
             <div class="pms6-grid">
-    
+
                 <!-- Service 1 -->
                 <a href="/services/residential.html" class="pms6-card">
                     <div class="pms6-visual">
@@ -475,19 +463,19 @@
                             style="background-image:url('https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=1600&q=80');">
                         </div>
                     </div>
-    
+
                     <div class="pms6-content">
                         <h3 class="pms6-title">Buy</h3>
                         <p class="pms6-desc">
                             Expert guidance for buying, selling, and investing in premium residential properties.
                         </p>
-    
+
                         <span class="pms6-cta">
                             View Service <i class="fas fa-arrow-right"></i>
                         </span>
                     </div>
                 </a>
-    
+
                 <!-- Service 2 -->
                 <a href="/services/commercial.html" class="pms6-card">
                     <div class="pms6-visual">
@@ -496,19 +484,19 @@
                             style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');">
                         </div>
                     </div>
-    
+
                     <div class="pms6-content">
                         <h3 class="pms6-title">sell</h3>
                         <p class="pms6-desc">
                             Strategic solutions for offices, showrooms, retail spaces, and corporate assets.
                         </p>
-    
+
                         <span class="pms6-cta">
                             View Service <i class="fas fa-arrow-right"></i>
                         </span>
                     </div>
                 </a>
-    
+
                 <!-- Service 3 -->
                 <a href="/services/leasing.html" class="pms6-card">
                     <div class="pms6-visual">
@@ -517,19 +505,19 @@
                             style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80');">
                         </div>
                     </div>
-    
+
                     <div class="pms6-content">
                         <h3 class="pms6-title">mandate( sole selling)</h3>
                         <p class="pms6-desc">
                             End-to-end leasing solutions ensuring maximum returns and secure tenancy.
                         </p>
-    
+
                         <span class="pms6-cta">
                             View Service <i class="fas fa-arrow-right"></i>
                         </span>
                     </div>
                 </a>
-    
+
                 <!-- Service 4 -->
                 <a href="/services/legal.html" class="pms6-card">
                     <div class="pms6-visual">
@@ -538,19 +526,19 @@
                             style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');">
                         </div>
                     </div>
-    
+
                     <div class="pms6-content">
                         <h3 class="pms6-title">Pre-lease</h3>
                         <p class="pms6-desc">
                             Transparent documentation, due diligence, and compliance handled by professionals.
                         </p>
-    
+
                         <span class="pms6-cta">
                             View Service <i class="fas fa-arrow-right"></i>
                         </span>
                     </div>
                 </a>
-    
+
                 <!-- service 5  -->
                 <a href="/services/legal.html" class="pms6-card">
                     <div class="pms6-visual">
@@ -559,19 +547,19 @@
                             style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');">
                         </div>
                     </div>
-    
+
                     <div class="pms6-content">
                         <h3 class="pms6-title">rent</h3>
                         <p class="pms6-desc">
                             Transparent documentation, due diligence, and compliance handled by professionals.
                         </p>
-    
+
                         <span class="pms6-cta">
                             View Service <i class="fas fa-arrow-right"></i>
                         </span>
                     </div>
                 </a>
-    
+
                 <!--service 6  -->
                 <a href="/services/legal.html" class="pms6-card">
                     <div class="pms6-visual">
@@ -580,19 +568,19 @@
                             style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');">
                         </div>
                     </div>
-    
+
                     <div class="pms6-content">
                         <h3 class="pms6-title">plotting</h3>
                         <p class="pms6-desc">
                             Transparent documentation, due diligence, and compliance handled by professionals.
                         </p>
-    
+
                         <span class="pms6-cta">
                             View Service <i class="fas fa-arrow-right"></i>
                         </span>
                     </div>
                 </a>
-    
+
                 <!-- service 7 -->
                 <a href="/services/legal.html" class="pms6-card">
                     <div class="pms6-visual">
@@ -601,45 +589,45 @@
                             style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');">
                         </div>
                     </div>
-    
+
                     <div class="pms6-content">
                         <h3 class="pms6-title">legal services- loan </h3>
                         <p class="pms6-desc">
                             Transparent documentation, due diligence, and compliance handled by professionals.
                         </p>
-    
+
                         <span class="pms6-cta">
                             View Service <i class="fas fa-arrow-right"></i>
                         </span>
                     </div>
                 </a>
-    
-    
-    
+
+
+
             </div>
         </div>
-    
+
         <!-- soft background accents -->
         <div class="pms6-glow pms6-glow-1"></div>
         <div class="pms6-glow pms6-glow-2"></div>
     </section>
-    
+
     <!-- WHY TO REFER -->
     <section class="psh9-section">
         <div class="psh9-container">
-    
+
             <!-- Left Content -->
             <div class="psh9-left">
                 <span class="psh9-tag">Why Choose Us</span>
                 <h2 class="psh9-title">
                     Complete Real Estate Solutions <br>Built on Trust & Expertise
                 </h2>
-    
+
                 <p class="psh9-intro">
                     We provide end-to-end real estate services with a focus on transparency,
                     strategic planning, and long-term value.
                 </p>
-    
+
                 <ul class="psh9-points">
                     <li>
                         <i class="fas fa-check-circle"></i>
@@ -658,12 +646,12 @@
                         <span>Post-sales assistance and property management</span>
                     </li>
                 </ul>
-    
+
                 <a href="/services.html" class="psh9-btn">
                     Explore Our Services <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-    
+
             <!-- Right Visual -->
             <div class="psh9-right">
                 <div class="psh9-image"></div>
@@ -672,58 +660,58 @@
                     <span>Industry Experience</span>
                 </div>
             </div>
-    
+
         </div>
     </section>
-    
+
     <!-- Counter Section -->
     <section class="pgc-counter">
         <div class="pgc-container">
-    
+
             <div class="pgc-header">
                 <h2>Our Numbers Speak for Us</h2>
                 <p>Delivering trust, performance, and results across real estate segments.</p>
             </div>
-    
+
             <div class="pgc-grid">
-    
+
                 <div class="pgc-card">
                     <span class="pgc-value" data-target="1250">0</span>
                     <span class="pgc-label">Properties Sold</span>
                 </div>
-    
+
                 <div class="pgc-card">
                     <span class="pgc-value" data-target="18">0</span>
                     <span class="pgc-label">Years of Experience</span>
                 </div>
-    
+
                 <div class="pgc-card">
                     <span class="pgc-value" data-target="320">0</span>
                     <span class="pgc-label">Happy Clients</span>
                 </div>
-    
+
                 <div class="pgc-card">
                     <span class="pgc-value" data-target="45">0</span>
                     <span class="pgc-label">Ongoing Projects</span>
                 </div>
-    
+
             </div>
         </div>
-    
+
         <!-- Ambient glow -->
         <div class="pgc-glow pgc-glow-1"></div>
         <div class="pgc-glow pgc-glow-2"></div>
     </section>
-    
+
     <!-- We are Associated with Pune's top builders -->
     <section class="partners-section">
         <div class="container">
-    
+
             <div class="partners-header">
                 <h2>Companies That Work With Us</h2>
                 <p>Trusted by industry-leading brands</p>
             </div>
-    
+
             <div class="partners-marquee">
                 <div class="partners-track mt-2 mb-3">
                     <!-- Repeat logos for infinite scrolling -->
@@ -732,7 +720,7 @@
                     <div class="partner-card"><img src="images/company-3.png" alt="Company"></div>
                     <div class="partner-card"><img src="images/company-4.png" alt="Company"></div>
                     <div class="partner-card"><img src="images/company-5.png" alt="Company"></div>
-    
+
                     <div class="partner-card"><img src="images/company-1.png" alt="Company"></div>
                     <div class="partner-card"><img src="images/company-2.png" alt="Company"></div>
                     <div class="partner-card"><img src="images/company-3.png" alt="Company"></div>
@@ -740,106 +728,105 @@
                     <div class="partner-card"><img src="images/company-5.png" alt="Company"></div>
                 </div>
             </div>
-    
+
         </div>
     </section>
 
-    
-<footer class="tcf-footer">
-    <!-- Top CTA Bar -->
-    <div class="tcf-cta">
-        <div class="container tcf-cta-inner">
-            <h3 class="tcf-cta-title">Are you Looking for the Best Property Consultant in Pune?</h3>
+    <!-- footer -->
+    <footer class="tcf-footer">
+        <!-- Top CTA Bar -->
+        <div class="tcf-cta">
+            <div class="container tcf-cta-inner">
+                <h3 class="tcf-cta-title">Are you Looking for the Best Property Consultant in Pune?</h3>
 
-            <a class="tcf-cta-btn" href="tel:+919657555585" aria-label="Call Now">
-                Call Now
-            </a>
+                <a class="tcf-cta-btn" href="tel:+919657555585" aria-label="Call Now">
+                    Call Now
+                </a>
+            </div>
         </div>
-    </div>
 
-    <!-- Main Footer Content -->
-    <div class="tcf-main">
-        <div class="container">
-            <div class="row g-4 align-items-start">
+        <!-- Main Footer Content -->
+        <div class="tcf-main">
+            <div class="container">
+                <div class="row g-4 align-items-start">
 
-                <!-- Left: Logo + Tagline -->
-                <div class="col-lg-5">
-                    <div class="tcf-brand">
-                        <img src="assets/Tristar-logo.png" class="tcf-logo" alt="Tristar Realtors Logo">
+                    <!-- Left: Logo + Tagline -->
+                    <div class="col-lg-5">
+                        <div class="tcf-brand">
+                            <img src="assets/Tristar-logo.png" class="tcf-logo" alt="Tristar Realtors Logo">
+                        </div>
+
+                        <p class="tcf-desc">
+                            Assistance in Buying, Selling, Leasing of Residential &amp; Commercial properties.
+                        </p>
                     </div>
 
-                    <p class="tcf-desc">
-                        Assistance in Buying, Selling, Leasing of Residential &amp; Commercial properties.
-                    </p>
+                    <!-- Middle: Get in Touch -->
+                    <div class="col-lg-4">
+                        <h4 class="tcf-title">Get in Touch</h4>
+                        <div class="tcf-underline"></div>
+
+                        <ul class="tcf-contact">
+                            <li>
+                                <span class="tcf-ico"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>
+                                    Tristar Realtors, Shop No 50, Ground Floor, Vastushree Complex, Hyde Park,
+                                    Marketyard,
+                                    Pune - 411037
+                                </span>
+                            </li>
+
+                            <li>
+                                <span class="tcf-ico"><i class="fas fa-phone-alt"></i></span>
+                                <span>
+                                    <a href="tel:+919657555585">+91 96575 55585</a><br>
+                                    <a href="tel:+918983025261">+91 89830 25261</a>
+                                </span>
+                            </li>
+
+                            <li>
+                                <span class="tcf-ico"><i class="fas fa-envelope"></i></span>
+                                <span>
+                                    <a href="mailto:tristarrealtors03@gmail.com">tristarrealtors03@gmail.com</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: Useful Links -->
+                    <div class="col-lg-3">
+                        <h4 class="tcf-title">Useful Links</h4>
+                        <div class="tcf-underline"></div>
+
+                        <ul class="tcf-links">
+                            <li><a href="/service.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                    Commercial Properties</a></li>
+                            <li><a href="/project.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                    Residential Properties</a></li>
+                            <li><a href="/contact.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                    Pre-Leased Properties</a></li>
+                            <li><a href="/contact.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                    Leasing Properties</a></li>
+                        </ul>
+                    </div>
+
                 </div>
-
-                <!-- Middle: Get in Touch -->
-                <div class="col-lg-4">
-                    <h4 class="tcf-title">Get in Touch</h4>
-                    <div class="tcf-underline"></div>
-
-                    <ul class="tcf-contact">
-                        <li>
-                            <span class="tcf-ico"><i class="fas fa-map-marker-alt"></i></span>
-                            <span>
-                                Tristar Realtors, Shop No 50, Ground Floor, Vastushree Complex, Hyde Park, Marketyard,
-                                Pune - 411037
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="tcf-ico"><i class="fas fa-phone-alt"></i></span>
-                            <span>
-                                <a href="tel:+919657555585">+91 96575 55585</a><br>
-                                <a href="tel:+918983025261">+91 89830 25261</a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="tcf-ico"><i class="fas fa-envelope"></i></span>
-                            <span>
-                                <a href="mailto:tristarrealtors03@gmail.com">tristarrealtors03@gmail.com</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Right: Useful Links -->
-                <div class="col-lg-3">
-                    <h4 class="tcf-title">Useful Links</h4>
-                    <div class="tcf-underline"></div>
-
-                    <ul class="tcf-links">
-                        <li><a href="/service.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
-                                Commercial Properties</a></li>
-                        <li><a href="/project.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
-                                Residential Properties</a></li>
-                        <li><a href="/contact.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
-                                Pre-Leased Properties</a></li>
-                        <li><a href="/contact.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
-                                Leasing Properties</a></li>
-                    </ul>
-                </div>
-
             </div>
         </div>
-    </div>
 
-    <!-- Bottom Bar -->
-    <div class="tcf-bottom">
-        <div class="container tcf-bottom-inner">
-            <div class="tcf-copy">
-                Copyright © 2025 | Powered by <strong>TRISTAR REALTORS</strong>
-            </div>
+        <!-- Bottom Bar -->
+        <div class="tcf-bottom">
+            <div class="container tcf-bottom-inner">
+                <div class="tcf-copy">
+                    Copyright © 2025 | Powered by <strong>TRISTAR REALTORS</strong>
+                </div>
 
-            <div class="tcf-credit">
-                Crafted by <a href="#" target="_blank" rel="noopener">Digitech Solutions</a>
+                <div class="tcf-credit">
+                    Crafted by <a href="#" target="_blank" rel="noopener">Digitech Solutions</a>
+                </div>
             </div>
         </div>
-    </div>
-
-</footer>
-
+    </footer>
 
 
     <!-- Design & developed by Durgesh Sonar -->
