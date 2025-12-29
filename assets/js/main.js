@@ -124,255 +124,70 @@
 // });
 
 // navbar
-// Enhanced Navigation JavaScript
-function initEnhancedNavigation() {
-  const navbar = document.querySelector(".navbar");
-  const navLinks = document.querySelectorAll(".nav-link");
-  const navbarToggler = document.querySelector(".navbar-toggler");
-  const navbarCollapse = document.querySelector(".navbar-collapse");
 
-  // Navbar scroll effect
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
+  (function () {
+    const dock = document.getElementById("vpdock");
+    if (!dock) return;
+
+    const onScroll = () => {
+      dock.classList.toggle("is-scrolled", window.scrollY > 12);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Desktop/tablet: ensure active link is visible inside the horizontal scroller
+    const linksWrap = dock.querySelector(".vpdock-links");
+    const active = dock.querySelector(".vpdock-link.is-active");
+    if (linksWrap && active && window.matchMedia("(min-width: 992px)").matches) {
+      active.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
     }
-  });
+  })();
 
-  // Close mobile menu when clicking a link
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      if (window.innerWidth < 992) {
-        if (navbarCollapse.classList.contains("show")) {
-          navbarToggler.click();
-        }
-      }
-
-      // Remove active class from all links
-      navLinks.forEach((navLink) => {
-        navLink.classList.remove("active");
-      });
-
-      // Add active class to clicked link
-      this.classList.add("active");
-    });
-  });
-
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: "smooth",
-        });
-      }
-    });
-  });
-
-  // Add animation to nav items on page load
-  window.addEventListener("load", function () {
-    const navItems = document.querySelectorAll(".nav-item");
-    navItems.forEach((item, index) => {
-      item.style.animation = `navItemFadeIn 0.5s ease forwards ${index * 0.1}s`;
-      item.style.opacity = "0";
-    });
-  });
-
-  // Add hover effect to logo
-  const navbarBrand = document.querySelector(".navbar-brand");
-  if (navbarBrand) {
-    navbarBrand.addEventListener("mouseenter", function () {
-      this.style.transform = "scale(1.02)";
-    });
-
-    navbarBrand.addEventListener("mouseleave", function () {
-      this.style.transform = "scale(1)";
-    });
-  }
-
-  // Update active nav link on scroll
-  const sections = document.querySelectorAll("section[id]");
-
-  window.addEventListener("scroll", function () {
-    let current = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-
-      if (scrollY >= sectionTop - 100) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
-    });
-  });
-}
-
-// Initialize enhanced navigation
-document.addEventListener("DOMContentLoaded", function () {
-  initEnhancedNavigation();
-});
 
 // hero banner
 // Add to your existing script.js
 
-// Hero Section Enhancements
-function initHeroSection() {
-  // Background slideshow
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
+  // MotionBanner slideshow
+  (function () {
+    const slides = document.querySelectorAll(".motionBanner__slide");
+    if (!slides.length) return;
 
-  if (slides.length > 0) {
-    // Start with first slide active
-    slides[currentSlide].classList.add("active");
+    let i = 0;
+    const interval = 4500;
 
-    // Rotate slides every 5 seconds
     setInterval(() => {
-      slides[currentSlide].classList.remove("active");
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add("active");
-    }, 5000);
-  }
+      slides[i].classList.remove("is-active");
+      i = (i + 1) % slides.length;
+      slides[i].classList.add("is-active");
+    }, interval);
+  })();
 
-  // Animate stats counting
-  const statNumbers = document.querySelectorAll(".stat-number");
+  // Premium subtle parallax (mouse move)
+  (function () {
+    const hero = document.querySelector(".motionBanner");
+    const activeSlide = () => document.querySelector(".motionBanner__slide.is-active");
+    if (!hero) return;
 
-  const animateCount = (element) => {
-    const target = parseInt(element.getAttribute("data-count"));
-    const suffix = element.textContent.includes("B") ? "B" : "";
-    const isDecimal = element.getAttribute("data-count").includes(".");
+    hero.addEventListener("mousemove", (e) => {
+      const s = activeSlide();
+      if (!s) return;
 
-    let count = 0;
-    const increment = target / 100;
-    const timer = setInterval(() => {
-      count += increment;
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
 
-      if (isDecimal) {
-        element.textContent = count.toFixed(1) + suffix;
-      } else {
-        element.textContent = Math.floor(count) + suffix;
-      }
-
-      if (count >= target) {
-        clearInterval(timer);
-        if (isDecimal) {
-          element.textContent = target.toFixed(1) + suffix;
-        } else {
-          element.textContent = target + suffix;
-        }
-      }
-    }, 20);
-  };
-
-  // Trigger stats animation when in view
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          statNumbers.forEach(animateCount);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  const statsSection = document.querySelector(".premium-stats");
-  if (statsSection) {
-    observer.observe(statsSection);
-  }
-
-  // Premium search button hover effect
-  const premiumSearchBtn = document.querySelector(".btn-premium-search");
-  if (premiumSearchBtn) {
-    premiumSearchBtn.addEventListener("mouseenter", function () {
-      this.style.transform = "translateY(-5px) scale(1.05)";
+      s.style.transform = `scale(1.03) translate(${x * 14}px, ${y * 10}px)`;
     });
 
-    premiumSearchBtn.addEventListener("mouseleave", function () {
-      this.style.transform = "translateY(0) scale(1)";
+    hero.addEventListener("mouseleave", () => {
+      const s = activeSlide();
+      if (!s) return;
+      s.style.transform = "scale(1)";
     });
-  }
+  })();
 
-  // Form select hover effects
-  const premiumSelects = document.querySelectorAll(".premium-select");
-  premiumSelects.forEach((select) => {
-    select.addEventListener("mouseenter", function () {
-      this.style.transform = "translateY(-2px)";
-    });
 
-    select.addEventListener("mouseleave", function () {
-      this.style.transform = "translateY(0)";
-    });
-  });
-
-  // Scroll indicator click
-  const scrollIndicator = document.querySelector(".scroll-indicator");
-  if (scrollIndicator) {
-    scrollIndicator.addEventListener("click", function () {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth",
-      });
-    });
-  }
-}
-
-// Initialize hero section when DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
-  initHeroSection();
-
-  // Add existing navbar scroll effect
-  const navbar = document.querySelector(".navbar");
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 100) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
-
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: "smooth",
-        });
-
-        // Close mobile menu if open
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const navbarCollapse = document.querySelector(".navbar-collapse");
-
-        if (navbarCollapse.classList.contains("show")) {
-          navbarToggler.click();
-        }
-      }
-    });
-  });
-});
 
 // our vision & mission
 // JavaScript for Vision & Mission Section
@@ -1943,4 +1758,122 @@ document.addEventListener("DOMContentLoaded", function () {
       this.style.transform = "translateY(0) scale(1)";
     });
   });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// ================================================================ //
+// counter section
+
+// Premium Counter Animation
+const counters = document.querySelectorAll('.pgc-value');
+
+const counterObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute('data-target');
+        let current = 0;
+        const increment = target / 120;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.innerText = Math.ceil(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCounter();
+        counterObserver.unobserve(counter);
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+counters.forEach(counter => {
+  counterObserver.observe(counter);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// scroller side logo
+const track = document.getElementById("partnersTrack");
+const scrollLeftBtn = document.getElementById("scrollLeft");
+const scrollRightBtn = document.getElementById("scrollRight");
+
+scrollLeftBtn.addEventListener("click", () => {
+  track.scrollBy({
+    left: -300,
+    behavior: "smooth",
+  });
+});
+
+scrollRightBtn.addEventListener("click", () => {
+  track.scrollBy({
+    left: 300,
+    behavior: "smooth",
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// scroller for commercial 
+const track = document.getElementById("commercialProjectsTrack");
+
+/* ARROW SCROLL */
+function scrollProjects(direction) {
+  track.scrollBy({
+    left: direction * 340,
+    behavior: "smooth"
+  });
+}
+
+/* AUTO SCROLL */
+let autoScroll = setInterval(autoScrollProjects, 30);
+
+function autoScrollProjects() {
+  track.scrollLeft += 1;
+  if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
+    track.scrollTo({ left: 0, behavior: "smooth" });
+  }
+}
+
+/* PAUSE ON HOVER */
+track.addEventListener("mouseenter", () => clearInterval(autoScroll));
+track.addEventListener("mouseleave", () => {
+  autoScroll = setInterval(autoScrollProjects, 30);
 });

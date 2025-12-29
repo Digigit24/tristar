@@ -15,72 +15,68 @@
         rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/about.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <!-- navbar -->
+    <nav class="vpdock" aria-label="Primary" id="vpdock">
         <div class="container">
-            <a class="navbar-brand" href="#home">
-                <!-- Logo with Text Option -->
-                <div class="brand-container">
-                    <img src="assets/Tristar-logo.png" alt="Tristar Realtors Logo" class="navbar-logo">
-                    <!-- Optional: Add text alongside logo -->
+            <div class="vpdock-shell">
+
+                <!-- Brand -->
+                <a class="vpdock-brand" href="/index.html" aria-label="Tristar Realtors Home">
+                    <img src="assets/Tristar-logo.png" alt="Tristar Realtors Logo" class="vpdock-logo" />
+                </a>
+
+                <!-- Links (Desktop + Tablet) -->
+                <div class="vpdock-links d-none d-lg-flex" role="navigation">
+                    <a class="vpdock-link" href="/index.html">Home</a>
+                    <a class="vpdock-link is-active" href="/about-us.html">About Us</a>
+                    <a class="vpdock-link" href="/commercial.html">Commercial</a>
+                    <a class="vpdock-link" href="/project.html">Residential</a>
+                    <a class="vpdock-link" href="/contact.html">Pre-Leased</a>
+                    <a class="vpdock-link" href="/contact.html">Leasing</a>
+                    <a class="vpdock-link" href="/contact.html">Services</a>
+                    <a class="vpdock-link" href="/contact.html">Awards & Recognition</a>
+                    <a class="vpdock-link" href="/contact.html">Contact Us</a>
                 </div>
-            </a>
-    
-            <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-                    <i class="fas fa-bars"></i>
-                </span>
-            </button>
-    
-            <!-- Navigation Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">
-                            <i class="fas fa-home d-lg-none"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/about-us.html">
-                            <i class="fas fa-building d-lg-none"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/service.html">
-                            <i class="fas fa-concierge-bell d-lg-none"></i>
-                            <span>Services</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/project.html">
-                            <i class="fas fa-eye d-lg-none"></i>
-                            <span>Project</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact.html ">
-                            <i class="fas fa-envelope d-lg-none"></i>
-                            <span>Contact</span>
-                        </a>
-                    </li>
-                    <li class="nav-item d-none d-lg-block">
-                        <a class="btn btn-primary nav-btn" href="tel:+919657555585">
-                            <i class="fas fa-phone-alt me-2"></i>
-                            Get In Touch
-                        </a>
-                    </li>
-                </ul>
+
+                <!-- Right actions -->
+                <div class="vpdock-actions">
+                    <a class="vpdock-cta d-none d-lg-inline-flex" href="tel:+919657555585">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Get In Touch</span>
+                    </a>
+
+                    <!-- Mobile toggle -->
+                    <button class="vpdock-burger d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#vpdockMobileMenu" aria-controls="vpdockMobileMenu" aria-expanded="false"
+                        aria-label="Open menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile dropdown -->
+            <div class="collapse vpdock-mobile d-lg-none" id="vpdockMobileMenu">
+                <a class="vpdock-mitem" href="/index.html"><i class="fas fa-home"></i> Home</a>
+                <a class="vpdock-mitem is-active" href="/about-us.html"><i class="fas fa-building"></i> About</a>
+                <a class="vpdock-mitem" href="/service.htm"><i class="fas fa-concierge-bell"></i> Commercial</a>
+                <a class="vpdock-mitem" href="/project.html"><i class="fas fa-eye"></i> Residential</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Pre-Leased</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Leasing</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Services</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Awards & Recognition</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+
+                <a class="vpdock-mcta" href="tel:+919657555585">
+                    <i class="fas fa-phone-alt"></i> Call: +91 96575 55585
+                </a>
             </div>
         </div>
+
+
     </nav>
 
     <!-- Premium About Hero Section -->
@@ -139,6 +135,7 @@
     </section>
 
     <!-- Ultra-Premium Company Overview -->
+    <!-- Design & developed by Durgesh Sonar -->
     <section class="company-overview elite-overview">
         <div class="container">
             <!-- Signature Header -->
@@ -148,21 +145,21 @@
                     <span class="badge-year">2019</span>
                     <div class="badge-ornament"></div>
                 </div>
-
+    
                 <h1 class="elite-title">
                     <span class="title-line" style="color: white !important;">Tristar</span>
                     <span class="title-accent">Realtors</span>
                 </h1>
-
+    
                 <div class="title-divider">
                     <div class="divider-dot"></div>
                     <div class="divider-line"></div>
                     <div class="divider-dot"></div>
                 </div>
-
+    
                 <p class="elite-subtitle">Redefining Luxury Real Estate Excellence</p>
             </div>
-
+    
             <!-- Premium Content Grid -->
             <div class="elite-content-grid">
                 <!-- Column 1: Vision -->
@@ -171,17 +168,17 @@
                         <span class="ornament-number">01</span>
                         <div class="ornament-line"></div>
                     </div>
-
+    
                     <h3 class="column-title">
                         <span class="title-word">Visionary</span>
                         <span class="title-word">Approach</span>
                     </h3>
-
+    
                     <p class="column-text">
                         Leading the future of premium real estate through innovative architecture and sustainable luxury
                         living solutions.
                     </p>
-
+    
                     <div class="column-feature">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
@@ -189,7 +186,7 @@
                         <span>Landmark Developments</span>
                     </div>
                 </div>
-
+    
                 <!-- Column 2: Excellence -->
                 <div class="elite-column excellence-column">
                     <div class="excellence-highlight">
@@ -199,7 +196,7 @@
                                     d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                             </svg>
                         </div>
-
+    
                         <div class="highlight-content">
                             <div class="highlight-stats">
                                 <div class="stat">
@@ -211,30 +208,30 @@
                                     <div class="stat-label">Years of Excellence</div>
                                 </div>
                             </div>
-
+    
                             <p class="highlight-text">
                                 Excellence in every transaction, from premium residences to commercial landmarks.
                             </p>
                         </div>
                     </div>
                 </div>
-
+    
                 <!-- Column 3: Commitment -->
                 <div class="elite-column commitment-column">
                     <div class="column-ornament">
                         <span class="ornament-number">03</span>
                         <div class="ornament-line"></div>
                     </div>
-
+    
                     <h3 class="column-title">
                         <span class="title-word">Unmatched</span>
                         <span class="title-word">Commitment</span>
                     </h3>
-
+    
                     <p class="column-text">
                         Building lasting relationships through transparency, expertise, and personalized luxury service.
                     </p>
-
+    
                     <div class="column-feature">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path
@@ -244,7 +241,7 @@
                     </div>
                 </div>
             </div>
-
+    
             <!-- Signature Quote -->
             <div class="elite-quote">
                 <div class="quote-decoration">
@@ -254,11 +251,11 @@
                     </div>
                     <div class="quote-line"></div>
                 </div>
-
+    
                 <blockquote class="quote-text">
                     "Where visionary real estate meets exceptional living experiences."
                 </blockquote>
-
+    
                 <div class="quote-signature">
                     <span class="signature-line"></span>
                     <span class="signature-text">Tristar Legacy</span>
@@ -266,7 +263,7 @@
                 </div>
             </div>
         </div>
-
+    
         <!-- Premium Background Elements -->
         <div class="elite-bg-elements">
             <div class="bg-light-beam beam-1"></div>
@@ -277,173 +274,220 @@
             <div class="bg-float-shape float-3"></div>
         </div>
     </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
+    
+    <!-- Counter Section -->
+    <section class="pgc-counter">
+        <div class="pgc-container">
+    
+            <div class="pgc-header">
+                <h2>Our Numbers Speak for Us</h2>
+                <p>Delivering trust, performance, and results across real estate segments.</p>
+            </div>
+    
+            <div class="pgc-grid">
+    
+                <div class="pgc-card">
+                    <span class="pgc-value" data-target="1250">0</span>
+                    <span class="pgc-label">Properties Sold</span>
+                </div>
+    
+                <div class="pgc-card">
+                    <span class="pgc-value" data-target="18">0</span>
+                    <span class="pgc-label">Years of Experience</span>
+                </div>
+    
+                <div class="pgc-card">
+                    <span class="pgc-value" data-target="320">0</span>
+                    <span class="pgc-label">Happy Clients</span>
+                </div>
+    
+                <div class="pgc-card">
+                    <span class="pgc-value" data-target="45">0</span>
+                    <span class="pgc-label">Ongoing Projects</span>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- Ambient glow -->
+        <div class="pgc-glow pgc-glow-1"></div>
+        <div class="pgc-glow pgc-glow-2"></div>
+    </section>
+    
+    <!-- Our Core Values -->
+    <section class="core-values-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Impact in Numbers</h2>
-                <p class="section-subtitle">Quantifying our commitment to excellence and client satisfaction</p>
+    
+            <!-- Heading -->
+            <div class="core-header">
+                <h2>Our Core Values</h2>
+                <span class="heading-line"></span>
             </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">22<span class="stat-suffix">+</span></div>
-                    <div class="stat-label">Storey Towers</div>
+    
+            <!-- Quote -->
+            <blockquote class="core-quote">
+                “Our purpose is not measured in rupees, volume, quotes, or percentages.
+                We’re solely driven by our love for helping people accomplish their dreams.”
+            </blockquote>
+    
+            <!-- Description -->
+            <p class="core-description">
+                Tristar Realtors was born out of the desire to serve clients better. Founded with
+                a vision to bridge the gap between expert consultation and genuine care, we are
+                committed to delivering trusted real estate solutions with integrity and excellence.
+            </p>
+    
+            <!-- Values -->
+            <div class="core-values-grid">
+    
+                <div class="core-value-card">
+                    <div class="icon-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-handshake-icon lucide-handshake">
+                            <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                            <path
+                                d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                            <path d="m21 3 1 11h-2" />
+                            <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                            <path d="M3 4h8" />
+                        </svg>
+                    </div>
+                    <div class="value-content">
+                        <h4>We do more for you.</h4>
+                        <p>
+                            As dedicated real estate professionals, we go beyond transactions.
+                            From consultation to post-sales support, we ensure our clients receive
+                            unmatched service, strategic guidance, and long-term value.
+                        </p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">10<span class="stat-suffix">+</span></div>
-                    <div class="stat-label">Years of Excellence</div>
+    
+                <div class="core-value-card">
+                    <div class="icon-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-handshake-icon lucide-handshake">
+                            <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                            <path
+                                d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                            <path d="m21 3 1 11h-2" />
+                            <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                            <path d="M3 4h8" />
+                        </svg>
+                    </div>
+                    <div class="value-content">
+                        <h4>Every client matters.</h4>
+                        <p>
+                            We follow a client-first approach, understanding unique needs and
+                            delivering tailored solutions. Every real estate journey begins
+                            with trust, care, and consistent results.
+                        </p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">8<span class="stat-suffix">%</span></div>
-                    <div class="stat-label">Projects Developed</div>
-                </div>
+    
             </div>
+    
         </div>
     </section>
 
+    <!-- footer -->
+     <footer class="tcf-footer">
+    <!-- Top CTA Bar -->
+    <div class="tcf-cta">
+        <div class="container tcf-cta-inner">
+            <h3 class="tcf-cta-title">Are you Looking for the Best Property Consultant in Pune?</h3>
 
-    <!-- Leadership Section -->
-    <section class="leadership-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Leadership Team</h2>
-                <p class="section-subtitle">Guided by experienced professionals dedicated to your success</p>
-            </div>
-
-            <div class="leadership-grid">
-                <div class="leader-card">
-                    <div class="leader-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Balaji Sir">
-                    </div>
-                    <h3>Balaji Sir</h3>
-                    <div class="leader-title">Managing Director</div>
-                    <p>20+ years of real estate expertise with specialization in commercial properties and strategic
-                        investments.</p>
-                </div>
-                <div class="leader-card">
-                    <div class="leader-image">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Darshan Sir">
-                    </div>
-                    <h3>Darshan Sir</h3>
-                    <div class="leader-title">Operations Director</div>
-                    <p>Expert in property management, legal documentation, and client relationship management.</p>
-                </div>
-                <div class="leader-card">
-                    <div class="leader-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Dhawal Sir">
-                    </div>
-                    <h3>Dhawal Sir</h3>
-                    <div class="leader-title">Business Development</div>
-                    <p>Specializes in residential properties, loan processing, and new project acquisitions.</p>
-                </div>
-            </div>
+            <a class="tcf-cta-btn" href="tel:+919657555585" aria-label="Call Now">
+                Call Now
+            </a>
         </div>
-    </section>
+    </div>
 
-
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Main Footer Content -->
+    <div class="tcf-main">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" style="color: white;">Get In Touch</h2>
-                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Connect with our expert team for
-                    personalized real estate solutions</p>
-            </div>
+            <div class="row g-4 align-items-start">
 
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                <!-- Left: Logo + Tagline -->
+                <div class="col-lg-5">
+                    <div class="tcf-brand">
+                        <img src="assets/Tristar-logo.png" class="tcf-logo" alt="Tristar Realtors Logo">
                     </div>
-                    <div class="contact-text">
-                        <h4>Our Address</h4>
-                        <p>Tristar Realtors, Shop No 50, Ground floor, Vastushree Complex, Hyde park, Marketyard, Pune-411037</p>
-                    </div>
-                </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h4>Email Address</h4>
-                        <p>tristarrealtors03@gmail.com</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h4>Contact Numbers</h4>
-                        <p>Balaji Sir: +91 98765 43210<br>
-                            Darshan Sir: +91 98765 43211<br>
-                            Dhawal Sir: +91 98765 43212</p>
-                    </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-light btn-lg mt-4" style="padding: 15px 40px; font-weight: 600;">
-                    Schedule a Consultation <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h3 class="logo-text">Tristar<span>Realtors</span></h3>
-                    <p class="footer-description">Your trusted partner in premium real estate solutions since 2019-20.
+                    <p class="tcf-desc">
+                        Assistance in Buying, Selling, Leasing of Residential &amp; Commercial properties.
                     </p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/about-us.html">About Us</a></li>
-                        <li><a href="/service.html">Services</a></li>
-                        <li><a href="/project.html">Project</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+
+                <!-- Middle: Get in Touch -->
+                <div class="col-lg-4">
+                    <h4 class="tcf-title">Get in Touch</h4>
+                    <div class="tcf-underline"></div>
+
+                    <ul class="tcf-contact">
+                        <li>
+                            <span class="tcf-ico"><i class="fas fa-map-marker-alt"></i></span>
+                            <span>
+                                Tristar Realtors, Shop No 50, Ground Floor, Vastushree Complex, Hyde Park, Marketyard,
+                                Pune - 411037
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="tcf-ico"><i class="fas fa-phone-alt"></i></span>
+                            <span>
+                                <a href="tel:+919657555585">+91 96575 55585</a><br>
+                                <a href="tel:+918983025261">+91 89830 25261</a>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="tcf-ico"><i class="fas fa-envelope"></i></span>
+                            <span>
+                                <a href="mailto:tristarrealtors03@gmail.com">tristarrealtors03@gmail.com</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h4>Our Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="/service.html">Property Buying</a></li>
-                        <li><a href="#">Property Selling</a></li>
-                        <li><a href="#">Rental Management</a></li>
-                        <li><a href="#">Legal Services</a></li>
-                        <li><a href="#">Loan Assistance</a></li>
+
+                <!-- Right: Useful Links -->
+                <div class="col-lg-3">
+                    <h4 class="tcf-title">Useful Links</h4>
+                    <div class="tcf-underline"></div>
+
+                    <ul class="tcf-links">
+                        <li><a href="/service.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                Commercial Properties</a></li>
+                        <li><a href="/project.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                Residential Properties</a></li>
+                        <li><a href="/contact.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                Pre-Leased Properties</a></li>
+                        <li><a href="/contact.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                Leasing Properties</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i>Tristar Realtors, Shop No 50, Ground floor,Vastushree Complex, Hyde park, Marketyard, Pune-411037</li>
-                        <li><i class="fas fa-phone"></i>+91 96575 55585</li>
-                        <li><i class="fas fa-envelope"></i> tristarrealtors03@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tristar Realtors. All rights reserved.</p>
+
             </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="tcf-bottom">
+        <div class="container tcf-bottom-inner">
+            <div class="tcf-copy">
+                Copyright © 2025 | Powered by <strong>TRISTAR REALTORS</strong>
+            </div>
+
+            <div class="tcf-credit">
+                Crafted by <a href="#" target="_blank" rel="noopener">Digitech Solutions</a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

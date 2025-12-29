@@ -18,1076 +18,831 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <!-- navbar -->
+    <nav class="vpdock" aria-label="Primary" id="vpdock">
         <div class="container">
-            <a class="navbar-brand" href="#home">
-                <!-- Logo with Text Option -->
-                <div class="brand-container">
-                    <img src="assets/Tristar-logo.png" alt="Tristar Realtors Logo" class="navbar-logo">
+            <div class="vpdock-shell">
+
+                <!-- Brand -->
+                <a class="vpdock-brand" href="/index.html" aria-label="Tristar Realtors Home">
+                    <img src="assets/Tristar-logo.png" alt="Tristar Realtors Logo" class="vpdock-logo" />
+                </a>
+
+                <!-- Links (Desktop + Tablet) -->
+                <div class="vpdock-links d-none d-lg-flex" role="navigation">
+                    <a class="vpdock-link is-active" href="/index.html">Home</a>
+                    <a class="vpdock-link" href="/about-us.html">About Us</a>
+                    <a class="vpdock-link" href="/service.html">Commercial</a>
+                    <a class="vpdock-link" href="/project.html">Residential</a>
+                    <a class="vpdock-link" href="/contact.html">Pre-Leased</a>
+                    <a class="vpdock-link" href="/contact.html">Leasing</a>
+                    <a class="vpdock-link" href="/contact.html">Services</a>
+                    <a class="vpdock-link" href="/contact.html">Awards & Recognition</a>
+                    <a class="vpdock-link" href="/contact.html">Contact Us</a>
                 </div>
-            </a>
 
-            <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-                    <i class="fas fa-bars"></i>
-                </span>
-            </button>
+                <!-- Right actions -->
+                <div class="vpdock-actions">
+                    <a class="vpdock-cta d-none d-lg-inline-flex" href="tel:+919657555585">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Get In Touch</span>
+                    </a>
 
-            <!-- Navigation Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/index.html">
-                            <i class="fas fa-home d-lg-none"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about-us.html">
-                            <i class="fas fa-building d-lg-none"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/service.html">
-                            <i class="fas fa-concierge-bell d-lg-none"></i>
-                            <span>Services</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/project.html">
-                            <i class="fas fa-eye d-lg-none"></i>
-                            <span>Project</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <i class="fas fa-envelope d-lg-none"></i>
-                            <span>Contact</span>
-                        </a>
-                    </li>
-                    <!-- <li class="nav-item d-lg-none mt-3">
-                        <div class="nav-contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+91 96575 55585</span>
-                            </div>
-                        </div>
-                    </li> -->
-                    <li class="nav-item d-none d-lg-block">
-                        <a class="btn btn-primary nav-btn" href="tel:+919657555585">
-                            <i class="fas fa-phone-alt me-2"></i>
-                            Get In Touch
-                        </a>
-                    </li>
-                </ul>
+                    <!-- Mobile toggle -->
+                    <button class="vpdock-burger d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#vpdockMobileMenu" aria-controls="vpdockMobileMenu" aria-expanded="false"
+                        aria-label="Open menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
+
+            <!-- Mobile dropdown -->
+            <div class="collapse vpdock-mobile d-lg-none" id="vpdockMobileMenu">
+                <a class="vpdock-mitem is-active" href="/index.html"><i class="fas fa-home"></i> Home</a>
+                <a class="vpdock-mitem" href="/about-us.html"><i class="fas fa-building"></i> About</a>
+                <a class="vpdock-mitem" href="/service.html"><i class="fas fa-concierge-bell"></i> Commercial</a>
+                <a class="vpdock-mitem" href="/project.html"><i class="fas fa-eye"></i> Residential</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Pre-Leased</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Leasing</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Services</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Awards & Recognition</a>
+                <a class="vpdock-mitem" href="/contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+
+                <a class="vpdock-mcta" href="tel:+919657555585">
+                    <i class="fas fa-phone-alt"></i> Call: +91 96575 55585
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom dock (Mobile thumb-friendly) -->
+        <div class="vpdock-bottom d-lg-none" aria-label="Quick navigation">
+            <a class="vpdock-bitem is-active" href="/index.html"><i class="fas fa-home"></i><span>Home</span></a>
+            <a class="vpdock-bitem" href="/about-us.html"><i class="fas fa-building"></i><span>About</span></a>
+            <a class="vpdock-bitem" href="/service.html"><i
+                    class="fas fa-concierge-bell"></i><span>Commercial</span></a>
+            <a class="vpdock-bitem" href="/project.html"><i class="fas fa-eye"></i><span>Residential</span></a>
+            <a class="vpdock-bitem" href="/contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <!-- Background Image Slideshow -->
-        <div class="hero-slideshow">
-            <div class="slide active"
-                style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+    <!-- MotionBanner – Animated hero with motion effects -->
+    <section id="home" class="motionBanner">
+        <!-- Background slideshow -->
+        <div class="motionBanner__bg" aria-hidden="true">
+            <div class="motionBanner__slide is-active"
+                style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80')">
             </div>
-            <div class="slide"
-                style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+
+            <div class="motionBanner__slide"
+                style="background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80')">
             </div>
-            <div class="slide"
-                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+
+            <div class="motionBanner__slide"
+                style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80')">
             </div>
-            <div class="slide"
-                style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+
+            <div class="motionBanner__slide"
+                style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80')">
             </div>
+
+            <!-- Premium overlays -->
+            <div class="motionBanner__overlay" aria-hidden="true"></div>
+            <div class="motionBanner__grain" aria-hidden="true"></div>
+            <div class="motionBanner__vignette" aria-hidden="true"></div>
         </div>
 
-        <!-- Gradient Overlay -->
-        <div class="gradient-overlay"></div>
-
-
-        <!-- Hero Content -->
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">TRISTAR <span class="highlight">REALTORS</span></h1>
-                </div>
-
-                <!-- Stats Bar -->
-                <!-- <div class="premium-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="500">0</div>
-                        <div class="stat-label">Properties Sold</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="2.5">0</div>
-                        <div class="stat-label">Billion in Sales</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="25">0</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="98">0</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                </div> -->
-            </div>
+        <!-- Content -->
+        <div class="motionBanner__content">
+            <h1 class="motionBanner__title">
+                TRISTAR <span class="motionBanner__highlight">REALTORS</span>
+            </h1>
         </div>
     </section>
 
-
-    <!-- Vision & Mission Section -->
-    <section id="vision-mission" class="section-padding vision-mission-section">
+    <!-- Data / Stats Components – Very Premium -->
+    <section id="why-invest-pune" class="section-padding pune-stats-section">
         <div class="container">
-            <!-- Section Header -->
-            <div class="section-header">
-                <span class="section-label">WHO WE ARE</span> <br>
-                <h2 class="section-title">Built for the Bold. <span class="highlight">Crafted by Visionaries.</span>
+
+            <!-- Header -->
+            <div class="pune-stats-header">
+                <h2 class="pune-stats-title">
+                    WHY INVEST IN<span class="pune-stats-highlight">REAL ESTATE IN PUNE?</span>
                 </h2>
-                <p class="section-subtitle">We don't just build real estate — we build credibility, community, and a
-                    legacy of trust.</p>
-            </div>
-
-            <div class="row g-5 align-items-center">
-                <!-- Content Column -->
-                <div class="col-lg-6">
-                    <div class="vision-mission-content">
-                        <!-- Vision -->
-                        <div class="vision-mission-card" data-aos="fade-up">
-                            <div class="vision-mission-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <div class="vision-mission-text">
-                                <h3>Our Vision</h3>
-                                <p>
-                                    To redefine modern urban living through landmark architecture, lifestyle-first
-                                    amenities, and thoughtfully placed
-                                    locations that inspire upward momentum.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Mission -->
-                        <div class="vision-mission-card" data-aos="fade-up" data-aos-delay="100">
-                            <div class="vision-mission-icon">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <div class="vision-mission-text">
-                                <h3>Our Mission</h3>
-                                <p>
-                                    To deliver aspirational homes that elevate everyday life — blending luxury,
-                                    practicality, and a future-forward
-                                    mindset to empower residents with more than just an address.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Value Proposition -->
-                        <!-- <div class="value-proposition">
-                            <h4>What Makes Us Different</h4>
-                            <div class="value-tags">
-                                <span class="value-tag">Corporate Responsibility</span>
-                                <span class="value-tag">Experts with Team Spirit</span>
-                                <span class="value-tag">Ethical & Transparent Practices</span>
-                                <span class="value-tag">Community-First Planning</span>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Stats & Visual Column -->
-                <div class="col-lg-6">
-                    <div class="stats-visual-container">
-                        <!-- Animated Stats -->
-                        <div class="premium-stats-grid" data-aos="fade-in">
-                            <div class="stat-box">
-                                <div class="stat-icon">
-                                    <i class="fas fa-city"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="counter" data-target="8">0</div>
-                                    <span class="counter-suffix">+</span>
-                                    <h5>Projects Developed</h5>
-                                    <p>Completed & ongoing residential projects in Pune</p>
-                                </div>
-                                <div class="stat-hover-effect"></div>
-                            </div>
-
-                            <div class="stat-box">
-                                <div class="stat-icon">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="counter" data-target="22">0</div>
-                                    <span class="counter-suffix"></span>
-                                    <h5>Storey Towers</h5>
-                                    <p>Storey Towers defining Ravet’s skyline</p>
-                                </div>
-                                <div class="stat-hover-effect"></div>
-                            </div>
-
-                            <div class="stat-box">
-                                <div class="stat-icon">
-                                    <i class="fas fa-history"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="counter" data-target="10">0</div>
-                                    <span class="counter-suffix">+</span>
-                                    <h5>Years of Excellence</h5>
-                                    <p>years of real estate experience</p>
-                                </div>
-                                <div class="stat-hover-effect"></div>
-                            </div>
-
-                            <div class="stat-box stat-box-image">
-                                <div class="stat-bg-image"
-                                    style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Visual Element / Testimonial -->
-                        <div class="experience-quote" data-aos="fade-up">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="quote-text">"We build for the bold and craft for visionaries. Every project is a
-                                commitment to quality, innovation, and the communities we serve."</p>
-                            <div class="quote-author">
-                                <strong>— TRISTAR REALTORS Team</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Background Elements for Premium Feel -->
-        <div class="section-bg-element bg-element-1"></div>
-        <div class="section-bg-element bg-element-2"></div>
-    </section>
-
-
-    <!-- Premium Living Experience Section -->
-    <section id="living-experience" class="section-padding experience-section">
-        <div class="container">
-            <!-- Section Header -->
-            <div class="section-header">
-                <span class="section-label">WHAT WE OFFER</span> <br>
-                <h2 class="section-title">What We Offer <span class="highlight">The Tristar Living Experience</span>
-                </h2>
-                <p class="section-subtitle">Backed by strong construction management practices — combining on-time
-                    delivery, quality control, and advanced materials to offer homes built to last generations.</p>
-            </div>
-
-            <!-- Bento Grid Layout -->
-            <div class="bento-grid">
-                <!-- Card 1 (Large) -->
-                <div class="bento-card large-card">
-                    <div class="card-bg" style="background-image: url('/assets/real-estate-development.jpg')"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3>Real Estate Development</h3>
-                    </div>
-                </div>
-
-                <!-- Card 2 (Medium) -->
-                <div class="bento-card medium-card">
-                    <div class="card-bg" style="background-image: url('/assets/project-management.jpg')"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3>Project Management</h3>
-                    </div>
-
-                </div>
-
-                <!-- Card 3 (Small) -->
-                <div class="bento-card small-card">
-                    <div class="card-bg" style="background-image: url('/assets/smart-invest-value.jpg')"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3>Smart Investment Value</h3>
-                    </div>
-                </div>
-
-                <!-- Card 4 (Medium) -->
-                <div class="bento-card medium-card">
-                    <div class="card-bg" style="background-image: url('/assets/construction-managment.jpg')"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3>Construction Management</h3>
-                    </div>
-
-                </div>
-
-                <!-- Card 5 (Small) -->
-                <div class="bento-card small-card">
-                    <div class="card-bg" style="background-image: url('assets/articture-design.jpg')"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3>Architecture & Design</h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trust Indicator -->
-            <!-- <div class="trust-indicator">
-                <div class="trust-content">
-                    <div class="trust-rating">
-                        <div class="rating-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <div class="rating-score">4.9</div>
-                    </div>
-                    <div class="trust-text">
-                        <p><strong>800+ satisfied families</strong> trust The TRISTAR REALTORS Living Experience for their dream homes</p>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-
-        <!-- Background Elements -->
-        <div class="section-bg-element exp-bg-1"></div>
-        <div class="section-bg-element exp-bg-2"></div>
-    </section>
-
-    <!-- Our Projects Section -->
-    <section id="our-projects" class="section-padding projects-section">
-        <div class="container">
-            <!-- Section Header -->
-            <div class="section-header">
-                <h2 class="section-title">Our <span class="highlight">Premium Projects</span></h2>
+                <p class="pune-stats-subtitle">
+                    Pune has been always popular for its culture, tradition, awesome weather & beautiful environment.
+                    Being the hub of
+                    IT, Industry, Automobile & education, Pune is the fastest-growing city in India. Pune is in the
+                    transformation
+                    phase.
+                    Initiatives of Metro & Infrastructure Works making Pune the most preferred futuristic investment
+                    destination.
                 </p>
             </div>
 
-            <!-- Projects Navigation -->
-            <div class="projects-navigation">
-                <div class="nav-dots" id="projectDots">
-                    <!-- Dots will be generated by JavaScript -->
+            <div class="row g-5 align-items-stretch">
+                <!-- Left: Content -->
+                <div class="col-lg-6">
+                    <div class="pune-stats-content">
+
+                        <div class="pune-stats-note">
+                            <div class="pune-stats-noteIcon"><i class="fas fa-chart-line"></i></div>
+                            <div class="pune-stats-noteText">
+                                <h4>Growth + Infrastructure = Opportunity</h4>
+                                <p>Metro expansion and city upgrades are reshaping connectivity, demand, and long-term
+                                    value.</p>
+                            </div>
+                        </div>
+
+                        <div class="pune-stats-points">
+                            <div class="pune-stats-point"><i class="fas fa-check-circle"></i><span>Smart & Metro
+                                    City</span>
+                            </div>
+                            <div class="pune-stats-point"><i class="fas fa-check-circle"></i><span>
+                                    Good Returns On Investment
+                                </span></div>
+                            <div class="pune-stats-point"><i class="fas fa-check-circle"></i><span>
+                                    All Round Connectivity
+                                </span></div>
+                            <div class="pune-stats-point"><i class="fas fa-check-circle"></i><span>Affordable
+                                    Properties</span></div>
+                            <div class="pune-stats-point"><i class="fas fa-check-circle"></i><span>Biggest Employment
+                                    HUB</span></div>
+                            <div class="pune-stats-point"><i class="fas fa-check-circle"></i><span>Preferred City by
+                                    Next
+                                    Generation</span></div>
+                            <div class="pune-stats-point"><i class="fas fa-check-circle"></i><span>Upgraded Physical and
+                                    Social Infrastructure</span></div>
+                            <div class="pune-stats-point"><i class="fas fa-check-circle"></i><span>Consistent Growth:
+                                    Education, IT & Automobiles Hub</span></div>
+                        </div>
+
+                        <div class="pune-stats-ctaRow">
+                            <a href="/project.html" class="pune-stats-btn pune-stats-btnGhost">
+                                Explore Projects
+                            </a>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="nav-info">
-                    <span id="currentProject">01</span>
-                    <span class="divider">/</span>
-                    <span id="totalProjects">05</span>
-                </div>
-            </div>
 
-            <!-- Projects Container -->
-            <div class="projects-container">
-                <div class="projects-track" id="projectsTrack">
+                <!-- Right: Premium Stats Grid -->
+                <div class="col-lg-6">
+                    <div class="pune-stats-grid">
 
-                    <!-- Project 1 -->
-                    <div class="project-card active" data-index="0">
-                        <div class="project-visual">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                                    alt="The Skyline Towers">
-                                <div class="image-overlay"></div>
-                                <div class="project-status">
-                                    <span class="status-badge completed">On going</span>
+                        <div class="pune-statCard">
+                            <div class="pune-statTop">
+                                <div class="pune-statIcon"><i class="fas fa-train-subway"></i></div>
+                                <div class="pune-statMeta">
+                                    <div class="pune-statKicker">Infrastructure</div>
+                                    <div class="pune-statTitle">Metro & City Upgrades</div>
                                 </div>
                             </div>
-                            <div class="project-shape">
-                            </div>
+                            <div class="pune-statValue">Future-ready</div>
+                            <p class="pune-statDesc">Major connectivity projects are improving access and boosting
+                                demand
+                                zones.</p>
+                            <span class="pune-statGlow" aria-hidden="true"></span>
                         </div>
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div class="project-meta">
-                                    <span class="meta-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        Ravet
-                                    </span>
+
+                        <div class="pune-statCard">
+                            <div class="pune-statTop">
+                                <div class="pune-statIcon"><i class="fas fa-briefcase"></i></div>
+                                <div class="pune-statMeta">
+                                    <div class="pune-statKicker">Employment</div>
+                                    <div class="pune-statTitle">Biggest Job Hub</div>
                                 </div>
-                                <h3 class="project-title">Capri Commercial- Ravet</h3>
                             </div>
+                            <div class="pune-statValue">High demand</div>
+                            <p class="pune-statDesc">IT, industry, automobile, and education keep housing demand
+                                consistently strong.</p>
+                            <span class="pune-statGlow" aria-hidden="true"></span>
+                        </div>
 
-                            <!-- <div class="project-features">
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-building"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">45</div>
-                                            <div class="feature-label">Storeys</div>
-                                        </div>
-                                    </div>
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-home"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">120</div>
-                                            <div class="feature-label">Premium Units</div>
-                                        </div>
-                                    </div>
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-expand-arrows-alt"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">850K</div>
-                                            <div class="feature-label">Sq. Ft.</div>
-                                        </div>
-                                    </div>
-                                </div> -->
+                        <div class="pune-statCard">
+                            <div class="pune-statTop">
+                                <div class="pune-statIcon"><i class="fas fa-hand-holding-dollar"></i></div>
+                                <div class="pune-statMeta">
+                                    <div class="pune-statKicker">Investment</div>
+                                    <div class="pune-statTitle">Good ROI Potential</div>
+                                </div>
+                            </div>
+                            <div class="pune-statValue">Value growth</div>
+                            <p class="pune-statDesc">Infrastructure + migration + development corridors support
+                                appreciation
+                                over time.</p>
+                            <span class="pune-statGlow" aria-hidden="true"></span>
+                        </div>
 
-                            <div class="project-actions">
-                                <a href="#" class="btn-project-view">
-                                    <span>View Project Details</span>
-                                    <i class="fas fa-arrow-right-long"></i>
-                                </a>
+                        <div class="pune-statCard pune-statCardImage">
+                            <div class="pune-statImage"
+                                style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80');">
+                            </div>
+                            <div class="pune-statOverlay"></div>
+                            <div class="pune-statImageContent">
+                                <div class="pune-statImageTitle">Pune is transforming.</div>
+                                <p class="pune-statImageDesc">The next decade belongs to cities built for work,
+                                    lifestyle,
+                                    and mobility.</p>
+                                <div class="pune-statImageBadges">
+                                    <span>Smart City</span>
+                                    <span>Metro Growth</span>
+                                    <span>Connectivity</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card" data-index="1">
-                        <div class="project-visual">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                                    alt="Oceanfront Residences">
-                                <div class="image-overlay"></div>
-                                <div class="project-status">
-                                    <span class="status-badge ongoing">On going</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div class="project-meta">
-                                    <span class="meta-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        Ravet
-                                    </span>
-                                </div>
-                                <h3 class="project-title">Capri Residential- Ravet</h3>
-                            </div>
-
-                            <!-- <div class="project-features">
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-water"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">12</div>
-                                            <div class="feature-label">Villas</div>
-                                        </div>
-                                    </div>
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-swimming-pool"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">Private</div>
-                                            <div class="feature-label">Infinity Pools</div>
-                                        </div>
-                                    </div>
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-tree"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">5 Acre</div>
-                                            <div class="feature-label">Landscape</div>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                            <div class="project-actions">
-                                <a href="#" class="btn-project-view">
-                                    <span>View Project Details</span>
-                                    <i class="fas fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card" data-index="2">
-                        <div class="project-visual">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                                    alt="Urban Oasis Towers">
-                                <div class="image-overlay"></div>
-                                <div class="project-status">
-                                    <span class="status-badge completed">On going</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div class="project-meta">
-                                    <span class="meta-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        Ravet
-                                    </span>
-                                </div>
-                                <h3 class="project-title">Aashirwad Capital- Ravet</h3>
-                            </div>
-
-                            <!-- <div class="project-features">
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-leaf"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">LEED</div>
-                                            <div class="feature-label">Platinum Certified</div>
-                                        </div>
-                                    </div>
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-solar-panel"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">100%</div>
-                                            <div class="feature-label">Renewable Energy</div>
-                                        </div>
-                                    </div>
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-robot"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">Smart</div>
-                                            <div class="feature-label">Home Technology</div>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                            <div class="project-actions">
-                                <a href="#" class="btn-project-view">
-                                    <span>View Project Details</span>
-                                    <i class="fas fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="project-card" data-index="3">
-                        <div class="project-visual">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                                    alt="The Metropolitan">
-                                <div class="image-overlay"></div>
-                                <div class="project-status">
-                                    <span class="status-badge upcoming">On going</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div class="project-meta">
-                                    <span class="meta-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        Nigdi Pradhikaran
-                                    </span>
-                                </div>
-                                <h3 class="project-title">Miraya- Nigdi Pradhikaran</h3>
-                            </div>
-
-                            <!-- <div class="project-description">
-                                    <p>A stunning fusion of historic Art Deco architecture with contemporary luxury amenities,
-                                        featuring private rooftop terraces, yacht docking, and exclusive beach club membership.
-                                    </p>
-                                </div> -->
-
-                            <!-- <div class="project-features">
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-umbrella-beach"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">Private</div>
-                                            <div class="feature-label">Beach Club</div>
-                                        </div>
-                                    </div>
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-anchor"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">Yacht</div>
-                                            <div class="feature-label">Docking</div>
-                                        </div>
-                                    </div>
-                                    <div class="feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-archway"></i>
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-value">Art Deco</div>
-                                            <div class="feature-label">Architecture</div>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                            <div class="project-actions">
-                                <a href="#" class="btn-project-view">
-                                    <span>View Project Details</span>
-                                    <i class="fas fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="project-card" data-index="4">
-                        <div class="project-visual">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                                    alt="Alpine Retreat">
-                                <div class="image-overlay"></div>
-                                <div class="project-status">
-                                    <span class="status-badge ongoing">On going</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div class="project-meta">
-                                    <span class="meta-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        Rasta peth Pune
-                                    </span>
-                                </div>
-                                <h3 class="project-title">The Linq Commercial- Rasta peth Pune</h3>
-                            </div>
-
-                            <div class="project-actions">
-                                <a href="#" class="btn-project-view">
-                                    <span>View Project Details</span>
-                                    <i class="fas fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
-            <!-- Navigation Controls -->
-            <div class="project-controls">
-                <button class="control-btn prev-btn" id="prevProject" aria-label="Previous project">
-                    <i class="fas fa-chevron-left"></i>
-                    <span>Previous</span>
-                </button>
-                <button class="control-btn next-btn" id="nextProject" aria-label="Next project">
-                    <span>Next</span>
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
         </div>
 
-        <!-- Background Elements -->
-        <div class="section-bg-element project-bg-1"></div>
-        <div class="section-bg-element project-bg-2"></div>
+        <!-- Premium background blobs -->
+        <div class="pune-bgBlob pune-bgBlob-1"></div>
+        <div class="pune-bgBlob pune-bgBlob-2"></div>
+    </section>
+
+    <!-- property section -->
+    <section id="properties" class="section-padding pmc4-properties">
+        <div class="container">
+    
+            <div class="section-header pmc4-head">
+                <h2 class="section-title">PROPERTIES</h2>
+                <p class="section-subtitle">Four categories. One look. Quick decisions.</p>
+            </div>
+    
+            <div class="pmc4-grid">
+    
+                <!-- Card 1 -->
+                <a class="pmc4-card" href="/project.html" aria-label="Residential properties">
+                    <div class="pmc4-media">
+                        <div class="pmc4-img" style="background-image:url(/assets/capri.jpg);">
+                        </div>
+                        <div class="pmc4-overlay"></div>
+                    </div>
+    
+                    <div class="pmc4-namebar">
+                        <h3 class="pmc4-title">Flats</h3>
+                        <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+    
+                <!-- Card 2 -->
+                <a class="pmc4-card" href="/service.html" aria-label="Commercial properties">
+                    <div class="pmc4-media">
+                        <div class="pmc4-img" style="background-image:url(/assets/recidential.jpg);">
+                        </div>
+                        <div class="pmc4-overlay"></div>
+                    </div>
+    
+                    <div class="pmc4-namebar">
+                        <h3 class="pmc4-title">Shops</h3>
+                        <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+    
+                <!-- Card 3 -->
+                <a class="pmc4-card" href="/contact.html" aria-label="Pre-leased properties">
+                    <div class="pmc4-media">
+                        <div class="pmc4-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                        <div class="pmc4-overlay"></div>
+                    </div>
+    
+                    <div class="pmc4-namebar">
+                        <h3 class="pmc4-title">Office</h3>
+                        <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+    
+                <!-- Card 4 -->
+                <a class="pmc4-card" href="/contact.html" aria-label="Leasing properties">
+                    <div class="pmc4-media">
+                        <div class="pmc4-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                        <div class="pmc4-overlay"></div>
+                    </div>
+    
+                    <div class="pmc4-namebar">
+                        <h3 class="pmc4-title">Bunglows</h3>
+                        <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+    
+                <!-- card 5 -->
+                <a class="pmc4-card" href="/contact.html" aria-label="Leasing properties">
+                    <div class="pmc4-media">
+                        <div class="pmc4-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                        <div class="pmc4-overlay"></div>
+                    </div>
+    
+                    <div class="pmc4-namebar">
+                        <h3 class="pmc4-title">Showrooms</h3>
+                        <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+    
+                <!-- card 6 -->
+                <a class="pmc4-card" href="/contact.html" aria-label="Leasing properties">
+                    <div class="pmc4-media">
+                        <div class="pmc4-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                        <div class="pmc4-overlay"></div>
+                    </div>
+    
+                    <div class="pmc4-namebar">
+                        <h3 class="pmc4-title">Industrial Wearhouse</h3>
+                        <span class="pmc4-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+    
+            </div>
+        </div>
+    
+        <!-- soft background accents -->
+        <div class="pmc4-blob pmc4-blob-1"></div>
+        <div class="pmc4-blob pmc4-blob-2"></div>
+    </section>
+    
+
+    <section class="wcn-section" id="why-consultant">
+        <div class="wcn-bg" aria-hidden="true"></div>
+        <div class="wcn-overlay" aria-hidden="true"></div>
+    
+        <div class="container wcn-wrap">
+    
+            <!-- Title block -->
+            <div class="wcn-titlebox">
+                <span class="wcn-line wcn-line-top" aria-hidden="true"></span>
+    
+                <h2 class="wcn-title">WHY DO YOU NEED A CONSULTANT?</h2>
+    
+                <span class="wcn-line wcn-line-bot" aria-hidden="true"></span>
+            </div>
+    
+            <!-- Icon grid -->
+            <div class="wcn-grid">
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="wcn-text">Location</div>
+                </div>
+    
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-eye"></i></div>
+                    <div class="wcn-text">Vision</div>
+                </div>
+    
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-house-user"></i></div>
+                    <div class="wcn-text">Home Work</div>
+                </div>
+    
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-gavel"></i></div>
+                    <div class="wcn-text">Litigation</div>
+                </div>
+    
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-chart-line"></i></div>
+                    <div class="wcn-text">ROI</div>
+                </div>
+    
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-compass"></i></div>
+                    <div class="wcn-text">Vastu Compliance</div>
+                </div>
+    
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-rupee-sign"></i></div>
+                    <div class="wcn-text">Current Market Price</div>
+                </div>
+    
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-seedling"></i></div>
+                    <div class="wcn-text">Growth Prospectus</div>
+                </div>
+    
+                <div class="wcn-item">
+                    <div class="wcn-ico"><i class="fas fa-file-signature"></i></div>
+                    <div class="wcn-text">
+                        Documentation
+                        <small>Commencement &amp; Completion</small>
+                    </div>
+                </div>
+    
+                <div class="wcn-item wcn-wide">
+                    <div class="wcn-ico"><i class="fas fa-shield-alt"></i></div>
+                    <div class="wcn-text">Reputation And His Current Financial Status</div>
+                </div>
+    
+                <div class="wcn-item wcn-wide">
+                    <div class="wcn-ico"><i class="fas fa-handshake"></i></div>
+                    <div class="wcn-text">Most Important Developer Or Saler Plays With Your Emotions</div>
+                </div>
+    
+                <div class="wcn-item wcn-wide">
+                    <div class="wcn-ico"><i class="fas fa-road"></i></div>
+                    <div class="wcn-text">Approach Road / Any Encroachment</div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
-    <!-- What Makes Us Different - Premium Section -->
-    <section id="different" class="section-padding difference-section">
+    <!-- services -->
+    <section id="services" class="section-padding pms6-services">
         <div class="container">
-            <!-- Section Header -->
-            <div class="section-header">
-                <h2 class="section-title">What makes<span class="highlight"> us different</span></h2>
+    
+            <div class="section-header pms6-head">
+                <h2 class="section-title">OUR SERVICES</h2>
                 <p class="section-subtitle">
-                    We don’t just build real estate. We build credibility.
+                    Professional real estate services crafted for buyers, sellers, and investors.
                 </p>
             </div>
-
-            <div class="difference-grid">
-                <!-- Image Column -->
-                <div class="difference-image">
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                            alt="TRISTAR REALTORS Real Estate Service" class="main-img">
-                        <div class="image-overlay"></div>
-
-                        <!-- Floating Achievement Badge -->
-                        <div class="achievement-badge">
-                            <div class="badge-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 15l-4.243 4.243 1.415 1.414L12 17.828l2.828 2.829 1.415-1.414L12 15zm0-12l4.243 4.243-1.415 1.414L12 6.172 9.172 9 7.757 7.586 12 3z" />
-                                </svg>
-                            </div>
-                            <div class="badge-content">
-                                <h4>4.9 Rating</h4>
-                                <p>800+ satisfied families</p>
-                            </div>
+    
+            <div class="pms6-grid">
+    
+                <!-- Service 1 -->
+                <a href="/services/residential.html" class="pms6-card">
+                    <div class="pms6-visual">
+                        <span class="pms6-badge">Residential</span>
+                        <div class="pms6-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=1600&q=80');">
                         </div>
-
-                        <!-- Corner Decoration -->
-                        <div class="image-corner"></div>
                     </div>
-                </div>
-
-                <!-- Points Column -->
-                <div class="difference-points">
-                    <!-- Point 1 -->
-                    <div class="difference-point">
-                        <div class="point-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                            </svg>
-                        </div>
-                        <div class="point-content">
-                            <h3>Corporate Responsibility</h3>
-                            <p>
-                                10+ years of real estate expertise
-                            </p>
-                        </div>
-                        <div class="point-hover"></div>
+    
+                    <div class="pms6-content">
+                        <h3 class="pms6-title">Buy</h3>
+                        <p class="pms6-desc">
+                            Expert guidance for buying, selling, and investing in premium residential properties.
+                        </p>
+    
+                        <span class="pms6-cta">
+                            View Service <i class="fas fa-arrow-right"></i>
+                        </span>
                     </div>
-
-                    <!-- Point 2 -->
-                    <div class="difference-point">
-                        <div class="point-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                            </svg>
+                </a>
+    
+                <!-- Service 2 -->
+                <a href="/services/commercial.html" class="pms6-card">
+                    <div class="pms6-visual">
+                        <span class="pms6-badge">Commercial</span>
+                        <div class="pms6-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');">
                         </div>
-                        <div class="point-content">
-                            <h3> Experts with Team Spirit</h3>
-                            <p>
-                                8+ projects developed across key locations
-                            </p>
-                        </div>
-                        <div class="point-hover"></div>
                     </div>
-
-                    <!-- Point 3 -->
-                    <div class="difference-point">
-                        <div class="point-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                                <path
-                                    d="M16 18v-2c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2h-2v2H2v-2H0v-2c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2H4v2h16v-2h-4z" />
-                            </svg>
-                        </div>
-                        <div class="point-content">
-                            <h3>Diversity, Equity & Inclusion</h3>
-                            <p>
-                                Ethical practices, on-time delivery, and community-first planning
-                            </p>
-                        </div>
-                        <div class="point-hover"></div>
+    
+                    <div class="pms6-content">
+                        <h3 class="pms6-title">sell</h3>
+                        <p class="pms6-desc">
+                            Strategic solutions for offices, showrooms, retail spaces, and corporate assets.
+                        </p>
+    
+                        <span class="pms6-cta">
+                            View Service <i class="fas fa-arrow-right"></i>
+                        </span>
                     </div>
-
-                    <!-- CTA Button -->
-
+                </a>
+    
+                <!-- Service 3 -->
+                <a href="/services/leasing.html" class="pms6-card">
+                    <div class="pms6-visual">
+                        <span class="pms6-badge">Leasing</span>
+                        <div class="pms6-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                    </div>
+    
+                    <div class="pms6-content">
+                        <h3 class="pms6-title">mandate( sole selling)</h3>
+                        <p class="pms6-desc">
+                            End-to-end leasing solutions ensuring maximum returns and secure tenancy.
+                        </p>
+    
+                        <span class="pms6-cta">
+                            View Service <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+    
+                <!-- Service 4 -->
+                <a href="/services/legal.html" class="pms6-card">
+                    <div class="pms6-visual">
+                        <span class="pms6-badge">Legal</span>
+                        <div class="pms6-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                    </div>
+    
+                    <div class="pms6-content">
+                        <h3 class="pms6-title">Pre-lease</h3>
+                        <p class="pms6-desc">
+                            Transparent documentation, due diligence, and compliance handled by professionals.
+                        </p>
+    
+                        <span class="pms6-cta">
+                            View Service <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+    
+                <!-- service 5  -->
+                <a href="/services/legal.html" class="pms6-card">
+                    <div class="pms6-visual">
+                        <span class="pms6-badge">Legal</span>
+                        <div class="pms6-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                    </div>
+    
+                    <div class="pms6-content">
+                        <h3 class="pms6-title">rent</h3>
+                        <p class="pms6-desc">
+                            Transparent documentation, due diligence, and compliance handled by professionals.
+                        </p>
+    
+                        <span class="pms6-cta">
+                            View Service <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+    
+                <!--service 6  -->
+                <a href="/services/legal.html" class="pms6-card">
+                    <div class="pms6-visual">
+                        <span class="pms6-badge">Legal</span>
+                        <div class="pms6-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                    </div>
+    
+                    <div class="pms6-content">
+                        <h3 class="pms6-title">plotting</h3>
+                        <p class="pms6-desc">
+                            Transparent documentation, due diligence, and compliance handled by professionals.
+                        </p>
+    
+                        <span class="pms6-cta">
+                            View Service <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+    
+                <!-- service 7 -->
+                <a href="/services/legal.html" class="pms6-card">
+                    <div class="pms6-visual">
+                        <span class="pms6-badge">Legal</span>
+                        <div class="pms6-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');">
+                        </div>
+                    </div>
+    
+                    <div class="pms6-content">
+                        <h3 class="pms6-title">legal services- loan </h3>
+                        <p class="pms6-desc">
+                            Transparent documentation, due diligence, and compliance handled by professionals.
+                        </p>
+    
+                        <span class="pms6-cta">
+                            View Service <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+    
+    
+    
+            </div>
+        </div>
+    
+        <!-- soft background accents -->
+        <div class="pms6-glow pms6-glow-1"></div>
+        <div class="pms6-glow pms6-glow-2"></div>
+    </section>
+    
+    <!-- WHY TO REFER -->
+    <section class="psh9-section">
+        <div class="psh9-container">
+    
+            <!-- Left Content -->
+            <div class="psh9-left">
+                <span class="psh9-tag">Why Choose Us</span>
+                <h2 class="psh9-title">
+                    Complete Real Estate Solutions <br>Built on Trust & Expertise
+                </h2>
+    
+                <p class="psh9-intro">
+                    We provide end-to-end real estate services with a focus on transparency,
+                    strategic planning, and long-term value.
+                </p>
+    
+                <ul class="psh9-points">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Verified properties with clear documentation</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Personalized consulting for buyers and investors</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Market-driven pricing and negotiation support</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Post-sales assistance and property management</span>
+                    </li>
+                </ul>
+    
+                <a href="/services.html" class="psh9-btn">
+                    Explore Our Services <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+    
+            <!-- Right Visual -->
+            <div class="psh9-right">
+                <div class="psh9-image"></div>
+                <div class="psh9-glass-card">
+                    <strong>12+ Years</strong>
+                    <span>Industry Experience</span>
                 </div>
             </div>
-
+    
+        </div>
+    </section>
+    
+    <!-- Counter Section -->
+    <section class="pgc-counter">
+        <div class="pgc-container">
+    
+            <div class="pgc-header">
+                <h2>Our Numbers Speak for Us</h2>
+                <p>Delivering trust, performance, and results across real estate segments.</p>
+            </div>
+    
+            <div class="pgc-grid">
+    
+                <div class="pgc-card">
+                    <span class="pgc-value" data-target="1250">0</span>
+                    <span class="pgc-label">Properties Sold</span>
+                </div>
+    
+                <div class="pgc-card">
+                    <span class="pgc-value" data-target="18">0</span>
+                    <span class="pgc-label">Years of Experience</span>
+                </div>
+    
+                <div class="pgc-card">
+                    <span class="pgc-value" data-target="320">0</span>
+                    <span class="pgc-label">Happy Clients</span>
+                </div>
+    
+                <div class="pgc-card">
+                    <span class="pgc-value" data-target="45">0</span>
+                    <span class="pgc-label">Ongoing Projects</span>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- Ambient glow -->
+        <div class="pgc-glow pgc-glow-1"></div>
+        <div class="pgc-glow pgc-glow-2"></div>
+    </section>
+    
+    <!-- We are Associated with Pune's top builders -->
+    <section class="partners-section">
+        <div class="container">
+    
+            <div class="partners-header">
+                <h2>Companies That Work With Us</h2>
+                <p>Trusted by industry-leading brands</p>
+            </div>
+    
+            <div class="partners-marquee">
+                <div class="partners-track mt-2 mb-3">
+                    <!-- Repeat logos for infinite scrolling -->
+                    <div class="partner-card"><img src="images/company-1.png" alt="Company"></div>
+                    <div class="partner-card"><img src="images/company-2.png" alt="Company"></div>
+                    <div class="partner-card"><img src="images/company-3.png" alt="Company"></div>
+                    <div class="partner-card"><img src="images/company-4.png" alt="Company"></div>
+                    <div class="partner-card"><img src="images/company-5.png" alt="Company"></div>
+    
+                    <div class="partner-card"><img src="images/company-1.png" alt="Company"></div>
+                    <div class="partner-card"><img src="images/company-2.png" alt="Company"></div>
+                    <div class="partner-card"><img src="images/company-3.png" alt="Company"></div>
+                    <div class="partner-card"><img src="images/company-4.png" alt="Company"></div>
+                    <div class="partner-card"><img src="images/company-5.png" alt="Company"></div>
+                </div>
+            </div>
+    
         </div>
     </section>
 
+    
+<footer class="tcf-footer">
+    <!-- Top CTA Bar -->
+    <div class="tcf-cta">
+        <div class="container tcf-cta-inner">
+            <h3 class="tcf-cta-title">Are you Looking for the Best Property Consultant in Pune?</h3>
 
-    <!-- Premium Leadership Cards -->
-    <section id="leadership" class="section-padding leadership-section">
-        <div class="container">
-            <!-- Section Header -->
-            <div class="section-header">
-                <h2 class="section-title">Meet Our <span class="highlight">Visionary Leaders</span></h2>
-            </div>
-
-            <!-- Leadership Cards Grid -->
-            <div class="leadership-cards-grid">
-                <!-- Founder 1 -->
-                <div class="leadership-card">
-                    <div class="leader-card-inner">
-                        <!-- Image Container -->
-                        <div class="leader-image-wrapper">
-                            <div class="leader-image-container">
-                                <img src="/assets/nitin-mittal.jpg" alt="Nitin Mittal" class="leader-portrait">
-                                <div class="image-glow"></div>
-                            </div>
-                            <div class="leader-image-frame"></div>
-                        </div>
-
-                        <!-- Name & Title -->
-                        <div class="leader-info">
-                            <h3 class="leader-name">Nitin Mittal</h3> <br>
-                            <div class="leader-position">Founder & CEO</div>
-                            <div class="leader-company">NMCORP</div>
-                        </div>
-
-                        <!-- Hover Effect -->
-                        <div class="card-hover-effect"></div>
-                    </div>
-                </div>
-
-                <!-- Founder 2 -->
-                <div class="leadership-card">
-                    <div class="leader-card-inner">
-                        <!-- Image Container -->
-                        <div class="leader-image-wrapper">
-                            <div class="leader-image-container">
-                                <img src="/assets/swapndeep-goyal.png" alt="Swapndeep Goyal" class="leader-portrait">
-                                <div class="image-glow"></div>
-                            </div>
-                            <div class="leader-image-frame"></div>
-                        </div>
-
-                        <!-- Name & Title -->
-                        <div class="leader-info">
-                            <h3 class="leader-name">Swapndeep Goyal</h3> <br>
-                            <div class="leader-position">Founder & MD</div>
-                            <div class="leader-company">ASHIWARD HOMES</div>
-                        </div>
-
-                        <!-- Hover Effect -->
-                        <div class="card-hover-effect"></div>
-                    </div>
-                </div>
-            </div>
+            <a class="tcf-cta-btn" href="tel:+919657555585" aria-label="Call Now">
+                Call Now
+            </a>
         </div>
+    </div>
 
-        <!-- Background Elements -->
-        <div class="leadership-bg-shapes">
-            <div class="bg-shape shape-1"></div>
-            <div class="bg-shape shape-2"></div>
-            <div class="bg-shape shape-3"></div>
-        </div>
-    </section>
-
-
-    <!-- Premium Contact Section with Bento Grid -->
-    <section id="contact" class="section-padding premium-contact-section">
+    <!-- Main Footer Content -->
+    <div class="tcf-main">
         <div class="container">
-            <!-- Section Header -->
-            <div class="contact-header text-center mb-5">
-                <span class="section-label">Quick enquiry</span> <br>
-                <h2 class="section-title">Get specialist advice for residential, commercial or property</h2>
-            </div>
+            <div class="row g-4 align-items-start">
 
-            <div class="row align-items-center">
-                <!-- Left Column: Contact Form -->
-                <div class="col-lg-6 col-xl-5 mb-5 mb-lg-0">
-                    <div class="premium-contact-form">
-
-                        <form id="consultationForm" class="contact-form">
-                            <!-- Name Field -->
-                            <div class="form-group floating-form-group">
-                                <div class="input-icon">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                                <input type="text" class="form-control" id="fullName" placeholder=" " required>
-                                <label for="fullName">Full Name *</label>
-                                <div class="form-underline"></div>
-                            </div>
-
-                            <!-- Email Field -->
-                            <div class="form-group floating-form-group">
-                                <div class="input-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <input type="email" class="form-control" id="emailAddress" placeholder=" " required>
-                                <label for="emailAddress">Email Address *</label>
-                                <div class="form-underline"></div>
-                            </div>
-
-                            <!-- Phone Field -->
-                            <div class="form-group floating-form-group">
-                                <div class="input-icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <input type="tel" class="form-control" id="phoneNumber" placeholder=" " required>
-                                <label for="phoneNumber">Phone Number *</label>
-                                <div class="form-underline"></div>
-                            </div>
-
-                            <!-- Inquiry Type Dropdown -->
-                            <div class="form-group floating-form-group">
-                                <div class="input-icon">
-                                    <i class="fas fa-question-circle"></i>
-                                </div>
-                                <select class="form-control" id="inquiryType" required>
-                                    <option value="" selected disabled></option>
-                                    <option value="residential-buying">Buying Residential Property</option>
-                                    <option value="commercial-buying">Buying Commercial Property</option>
-                                    <option value="residential-selling">Selling Residential Property</option>
-                                    <option value="commercial-selling">Selling Commercial Property</option>
-                                    <option value="renting-leasing">Renting / Leasing</option>
-                                    <option value="property-management">Property Management</option>
-                                    <option value="investment-consulting">Investment Consulting</option>
-                                    <option value="general-query">General Inquiry</option>
-                                </select>
-                                <label for="inquiryType">Type of Inquiry *</label>
-                                <div class="form-underline"></div>
-                                <i class="fas fa-chevron-down dropdown-arrow"></i>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="form-group text-center mt-4">
-                                <button type="submit" class="btn btn-submit-consultation">
-                                    <span class="btn-text">
-                                        <i class="fas fa-paper-plane me-2"></i> Submit Request
-                                    </span>
-                                    <span class="btn-loading">
-                                        <i class="fas fa-spinner fa-spin me-2"></i> Processing...
-                                    </span>
-                                </button>
-                                <p class="form-note mt-3">
-                                    <i class="fas fa-shield-alt me-1"></i> Your information is secure and confidential
-                                </p>
-                            </div>
-                        </form>
+                <!-- Left: Logo + Tagline -->
+                <div class="col-lg-5">
+                    <div class="tcf-brand">
+                        <img src="assets/Tristar-logo.png" class="tcf-logo" alt="Tristar Realtors Logo">
                     </div>
+
+                    <p class="tcf-desc">
+                        Assistance in Buying, Selling, Leasing of Residential &amp; Commercial properties.
+                    </p>
                 </div>
 
-                <!-- Right Column: Bento Grid Images -->
-                <div class="col-lg-6 col-xl-7">
-                    <div class="bento-grid-wrapper">
-                        <div class="bento-grid">
-                            <!-- Main Large Image -->
-                            <div class="bento-item bento-large"
-                                style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                                <div class="bento-overlay">
-                                    <h4>Luxury Residences</h4>
-                                    <p>Experience premium living spaces</p>
-                                </div>
-                            </div>
+                <!-- Middle: Get in Touch -->
+                <div class="col-lg-4">
+                    <h4 class="tcf-title">Get in Touch</h4>
+                    <div class="tcf-underline"></div>
 
-                            <!-- Medium Image 1 -->
-                            <div class="bento-item bento-medium"
-                                style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
-                                <div class="bento-overlay">
-                                    <h4>Modern Amenities</h4>
-                                    <p>World-class facilities</p>
-                                </div>
-                            </div>
+                    <ul class="tcf-contact">
+                        <li>
+                            <span class="tcf-ico"><i class="fas fa-map-marker-alt"></i></span>
+                            <span>
+                                Tristar Realtors, Shop No 50, Ground Floor, Vastushree Complex, Hyde Park, Marketyard,
+                                Pune - 411037
+                            </span>
+                        </li>
 
-                            <!-- Medium Image 2 -->
-                            <div class="bento-item bento-medium"
-                                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
-                                <div class="bento-overlay">
-                                    <h4>Panoramic Views</h4>
-                                    <p>Breathtaking cityscapes</p>
-                                </div>
-                            </div>
+                        <li>
+                            <span class="tcf-ico"><i class="fas fa-phone-alt"></i></span>
+                            <span>
+                                <a href="tel:+919657555585">+91 96575 55585</a><br>
+                                <a href="tel:+918983025261">+91 89830 25261</a>
+                            </span>
+                        </li>
 
-                            <!-- Medium Image 2 -->
-                            <div class="bento-item bento-medium"
-                                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
-                                <div class="bento-overlay">
-                                    <h4>Panoramic Views</h4>
-                                    <p>Breathtaking cityscapes</p>
-                                </div>
-                            </div>
-
-                            <!-- Small Image 1 -->
-                            <div class="bento-item bento-small"
-                                style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');">
-                                <div class="bento-overlay">
-                                    <h4>Premium Interiors</h4>
-                                </div>
-                            </div>
-
-                            <!-- Small Image 2 -->
-                            <div class="bento-item bento-small"
-                                style="background-image: url('/assets/smart-home.jpg');">
-                                <div class="bento-overlay">
-                                    <h4>Smart Living</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Contact Options -->
-                        <div class="contact-options-bento mt-4">
-                            <div class="contact-option-item">
-                                <i class="fas fa-phone-alt"></i>
-                                <div>
-                                    <h5>Call Now</h5>
-                                    <p>+91 96575 55585</p>
-                                </div>
-                            </div>
-                            <div class="contact-option-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h5>Email Us</h5>
-                                    <p>tristarrealtors03@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="contact-option-item">
-                                <i class="fab fa-whatsapp"></i>
-                                <div>
-                                    <h5>WhatsApp</h5>
-                                    <p>+91 96575 55585</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h3 class="logo-text">TRISTAR REALTORS</h3>
-                    <p class="footer-description">Premium real estate services for luxury properties in prime locations
-                        worldwide.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/about-us.html">About us</a></li>
-                        <li><a href="/service.html">Services</a></li>
-                        <li><a href="/project.html">Project</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li>
+                            <span class="tcf-ico"><i class="fas fa-envelope"></i></span>
+                            <span>
+                                <a href="mailto:tristarrealtors03@gmail.com">tristarrealtors03@gmail.com</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Buy Property</a></li>
-                        <li><a href="#">Sell Property</a></li>
-                        <li><a href="#">Property Management</a></li>
-                        <li><a href="#">Investment Consulting</a></li>
-                        <li><a href="#">Legal Assistance</a></li>
+
+                <!-- Right: Useful Links -->
+                <div class="col-lg-3">
+                    <h4 class="tcf-title">Useful Links</h4>
+                    <div class="tcf-underline"></div>
+
+                    <ul class="tcf-links">
+                        <li><a href="/service.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                Commercial Properties</a></li>
+                        <li><a href="/project.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                Residential Properties</a></li>
+                        <li><a href="/contact.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                Pre-Leased Properties</a></li>
+                        <li><a href="/contact.html"><span class="tcf-dot"><i class="fas fa-caret-right"></i></span>
+                                Leasing Properties</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i>Tristar Realtors, Shop No 50, Ground floor, Vastushree
-                            Complex, Hyde park, Marketyard, Pune-411037</li>
-                        <li><i class="fas fa-phone"></i>+91 96575 55585 <br> +91 89830 25261</li>
-                        <li><i class="fas fa-envelope"></i>tristarrealtors03@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 TRISTAR REALTORS. All rights reserved.</p>
+
             </div>
         </div>
-    </footer>
+    </div>
 
+    <!-- Bottom Bar -->
+    <div class="tcf-bottom">
+        <div class="container tcf-bottom-inner">
+            <div class="tcf-copy">
+                Copyright © 2025 | Powered by <strong>TRISTAR REALTORS</strong>
+            </div>
+
+            <div class="tcf-credit">
+                Crafted by <a href="#" target="_blank" rel="noopener">Digitech Solutions</a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+
+    <!-- Design & developed by Durgesh Sonar -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
